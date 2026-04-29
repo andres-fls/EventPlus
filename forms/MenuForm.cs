@@ -1,20 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using eventPlus.Models;
 
-namespace eventPlus
+namespace eventPlus.Forms
 {
     public partial class MenuForm : Form
     {
-        public MenuForm()
+        private Usuario usuarioActual;
+
+        public MenuForm(Usuario usuario)
         {
             InitializeComponent();
+
+            usuarioActual = usuario;
         }
     }
 }

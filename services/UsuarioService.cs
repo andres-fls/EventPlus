@@ -2,6 +2,7 @@
 using eventPlus.Data;
 using System.Collections.Generic;
 using System;
+using eventPlus.Models;
 
 namespace eventPlus.Services
 {

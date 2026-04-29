@@ -1,5 +1,6 @@
 ﻿using MongoDB.Driver;
 using System.Configuration;
+using eventPlus.Models;
 
 namespace eventPlus.Data
 {
