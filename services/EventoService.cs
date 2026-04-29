@@ -24,7 +24,7 @@ namespace eventPlus.Services
             if (evento == null)
                 throw new Exception("Evento inválido.");
 
-            if (string.IsNullOrWhiteSpace(evento.Nombre))
+            if (string.IsNullOrWhiteSpace(evento.NombreEvento))
                 throw new Exception("El nombre del evento es obligatorio.");
 
             if (string.IsNullOrWhiteSpace(evento.IdLider))
