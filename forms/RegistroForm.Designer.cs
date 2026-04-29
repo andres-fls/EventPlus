@@ -1,4 +1,4 @@
-﻿namespace eventPlus
+﻿namespace eventPlus.Forms
 {
     partial class RegistroForm
     {

@@ -14,5 +14,55 @@ namespace eventPlus.Forms
 
             usuarioActual = usuario;
         }
+
+        private void MenuForm_Load(object sender, EventArgs e)
+        {
+            lblUsuario.Text =
+                $"{usuarioActual.Nombre} - {usuarioActual.Rol}";
+
+            // SI ES INVITADO
+            if (usuarioActual.Rol == "Invitado")
+            {
+                btnGestionEventos.Visible = false;
+            }
+        }
+
+        // ==========================
+        // CREAR EVENTOS
+        // ==========================
+        private void btnGestionEventos_Click(object sender, EventArgs e)
+        {
+            CrearEventoForm form =
+                new CrearEventoForm(usuarioActual);
+
+            form.Show();
+
+            this.Hide();
+        }
+
+        // ==========================
+        // VER EVENTOS
+        // ==========================
+        private void btnMisEventos_Click(object sender, EventArgs e)
+        {
+            EventosForm form =
+                new EventosForm(usuarioActual);
+
+            form.Show();
+
+            this.Hide();
+        }
+
+        // ==========================
+        // CERRAR SESIÓN
+        // ==========================
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            LoginForm login = new LoginForm();
+
+            login.Show();
+
+            this.Close();
+        }
     }
 }
