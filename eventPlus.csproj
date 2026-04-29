@@ -188,11 +188,20 @@
     </Compile>
     <Compile Include="services\EventoService.cs" />
     <Compile Include="services\UsuarioService.cs" />
+    <EmbeddedResource Include="forms\CrearEventoForm.resx">
+      <DependentUpon>CrearEventoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\EventosForm.resx">
+      <DependentUpon>EventosForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\RegistroForm.resx">
+      <DependentUpon>RegistroForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -11,14 +11,26 @@ namespace eventPlus.Models
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
 
-        public string Nombre { get; set; }
-        public string Tipo { get; set; }
+        public string NombreEvento { get; set; }
+
+        public string lugarEvento { get; set; }
+
+        public string TipoEvento { get; set; }
+
+        public string categoriaEvento { get; set; }
+
+        public string descripcionEvento { get; set; }
+
         public DateTime FechaHora { get; set; }
+
+        public int cupoMaximo { get; set; }
 
         public string IdLider { get; set; }
 
         public bool Activo { get; set; } = true;
 
         public List<string> InvitadosIds { get; set; } = new List<string>();
-    }
+
+    } 
+
 }
