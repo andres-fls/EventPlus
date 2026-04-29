@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using MongoDB.Driver;
 using eventPlus.Data;
+using eventPlus.Models;
 
 namespace eventPlus.Services
 {

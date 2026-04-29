@@ -1,20 +1,68 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using eventPlus.Models;
 
-namespace eventPlus
+namespace eventPlus.Forms
 {
     public partial class MenuForm : Form
     {
-        public MenuForm()
+        private Usuario usuarioActual;
+
+        public MenuForm(Usuario usuario)
         {
             InitializeComponent();
+
+            usuarioActual = usuario;
+        }
+
+        private void MenuForm_Load(object sender, EventArgs e)
+        {
+            lblUsuario.Text =
+                $"{usuarioActual.Nombre} - {usuarioActual.Rol}";
+
+            // SI ES INVITADO
+            if (usuarioActual.Rol == "Invitado")
+            {
+                btnGestionEventos.Visible = false;
+            }
+        }
+
+        // ==========================
+        // CREAR EVENTOS
+        // ==========================
+        private void btnGestionEventos_Click(object sender, EventArgs e)
+        {
+            CrearEventoForm form =
+                new CrearEventoForm(usuarioActual);
+
+            form.Show();
+
+            this.Hide();
+        }
+
+        // ==========================
+        // VER EVENTOS
+        // ==========================
+        private void btnMisEventos_Click(object sender, EventArgs e)
+        {
+            EventosForm form =
+                new EventosForm(usuarioActual);
+
+            form.Show();
+
+            this.Hide();
+        }
+
+        // ==========================
+        // CERRAR SESIÓN
+        // ==========================
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            LoginForm login = new LoginForm();
+
+            login.Show();
+
+            this.Close();
         }
     }
 }
