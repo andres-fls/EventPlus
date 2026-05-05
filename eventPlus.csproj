@@ -158,6 +158,12 @@
     <Compile Include="forms\CrearEventoForm.Designer.cs">
       <DependentUpon>CrearEventoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\DetalleEventoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\DetalleEventoForm.Designer.cs">
+      <DependentUpon>DetalleEventoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\EventosForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +196,9 @@
     <Compile Include="services\UsuarioService.cs" />
     <EmbeddedResource Include="forms\CrearEventoForm.resx">
       <DependentUpon>CrearEventoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\DetalleEventoForm.resx">
+      <DependentUpon>DetalleEventoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\EventosForm.resx">
       <DependentUpon>EventosForm.cs</DependentUpon>
