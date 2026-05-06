@@ -118,19 +118,6 @@ namespace eventPlus.Services
         }
 
         // =========================================
-        // DESACTIVAR EVENTO (SOFT DELETE)
-        // =========================================
-        public void DesactivarEvento(string idEvento)
-        {
-            if (string.IsNullOrWhiteSpace(idEvento))
-                throw new Exception("ID inválido.");
-
-            var update = Builders<Evento>.Update.Set(e => e.Activo, false);
-
-            eventos.UpdateOne(e => e.Id == idEvento, update);
-        }
-
-        // =========================================
         // EVENTOS POR USUARIO
         // =========================================
         public List<Evento> ObtenerEventosPorUsuario(string usuarioId)
@@ -164,22 +151,25 @@ namespace eventPlus.Services
 
         public List<Evento> ObtenerTodos()
         {
-            return new List<Evento>();
+            return eventos.Find(e => e.Activo).ToList();
         }
 
         public List<Evento> ObtenerEventosInvitado(string idUsuario)
         {
-            return new List<Evento>();
+            return eventos.Find(e =>
+                e.Activo &&
+                e.InvitadosIds != null &&
+                e.InvitadosIds.Contains(idUsuario)
+            ).ToList();
         }
 
-        public void ActualizarEvento(Evento evento)
+        public void DeshabilitarEvento(string idEvento)
         {
+            if (string.IsNullOrWhiteSpace(idEvento))
+                throw new Exception("ID inválido.");
 
-        }
-
-        public void DeshabilitarEvento(string id)
-        {
-
+            var update = Builders<Evento>.Update.Set(e => e.Activo, false);
+            eventos.UpdateOne(e => e.Id == idEvento, update);
         }
 
     }

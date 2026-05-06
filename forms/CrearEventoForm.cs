@@ -165,7 +165,7 @@ namespace eventPlus.Forms
                     evento.Id =
                         eventoEditar.Id;
 
-                    eventoService.ActualizarEvento(
+                    eventoService.EditarEvento(
                         evento);
 
                     MessageBox.Show(

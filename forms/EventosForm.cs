@@ -1,8 +1,8 @@
-﻿using eventPlus.Forms;
-using eventPlus.Models;
+﻿using eventPlus.Models;
 using eventPlus.Services;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace eventPlus.Forms
@@ -10,28 +10,112 @@ namespace eventPlus.Forms
     public partial class EventosForm : Form
     {
         private Usuario usuarioActual;
-
-        private EventoService eventoService =
-            new EventoService();
-
-        private UsuarioService usuarioService =
-            new UsuarioService();
+        private EventoService eventoService = new EventoService();
+        private UsuarioService usuarioService = new UsuarioService();
 
         public EventosForm(Usuario usuario)
         {
             InitializeComponent();
-
             usuarioActual = usuario;
-
-            dgvEventos.SelectionChanged +=
-                dgvEventos_SelectionChanged;
         }
 
-        private void EventosForm_Load(object sender, System.EventArgs e)
+        private void EventosForm_Load(object sender, EventArgs e)
         {
+            ConfigurarColumnasEventos();
+            ConfigurarColumnasInvitados();
             ConfigurarVistaPorRol();
-
             CargarEventos();
+            CargarTodosInvitados();
+        }
+
+        // =====================================
+        // CONFIGURAR COLUMNAS DGV EVENTOS
+        // =====================================
+        private void ConfigurarColumnasEventos()
+        {
+            dgvEventos.AutoGenerateColumns = false;
+            dgvEventos.Columns.Clear();
+
+            dgvEventos.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "NombreEvento",
+                HeaderText = "Evento",
+                Width = 200
+            });
+
+            dgvEventos.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "Fecha",
+                HeaderText = "Fecha",
+                Width = 100,
+                DefaultCellStyle = new DataGridViewCellStyle { Format = "dd/MM/yyyy" }
+            });
+
+            dgvEventos.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "Hora",
+                HeaderText = "Hora",
+                Width = 80,
+                DefaultCellStyle = new DataGridViewCellStyle { Format = "HH:mm" }
+            });
+
+            dgvEventos.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "lugarEvento",
+                HeaderText = "Lugar",
+                Width = 150
+            });
+
+            dgvEventos.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "cupoMaximo",
+                HeaderText = "Cupo",
+                Width = 60
+            });
+
+            dgvEventos.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "Activo",
+                HeaderText = "Activo",
+                Width = 60
+            });
+        }
+
+        // =====================================
+        // CONFIGURAR COLUMNAS DGV INVITADOS
+        // =====================================
+        private void ConfigurarColumnasInvitados()
+        {
+            dgvInvitados.AutoGenerateColumns = false;
+            dgvInvitados.Columns.Clear();
+
+            dgvInvitados.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "Nombre",
+                HeaderText = "Nombre",
+                Width = 180
+            });
+
+            dgvInvitados.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "Correo",
+                HeaderText = "Correo",
+                Width = 200
+            });
+
+            dgvInvitados.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "Telefono",
+                HeaderText = "Teléfono",
+                Width = 120
+            });
+
+            dgvInvitados.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "Edad",
+                HeaderText = "Edad",
+                Width = 60
+            });
         }
 
         // =====================================
@@ -42,7 +126,7 @@ namespace eventPlus.Forms
             if (usuarioActual.Rol == "Invitado")
             {
                 dgvInvitados.Visible = false;
-
+                btnAgregarInvitado.Visible = false;
                 btnCrear.Visible = false;
                 btnEditar.Visible = false;
                 btnDeshabilitar.Visible = false;
@@ -58,132 +142,150 @@ namespace eventPlus.Forms
             {
                 List<Evento> eventos;
 
-                // =========================
-                // SI ES LIDER
-                // =========================
                 if (usuarioActual.Rol == "Lider")
                 {
-                    eventos =
-                        eventoService.ObtenerTodos();
+                    eventos = eventoService.ObtenerTodos();
                 }
-
-                // =========================
-                // SI ES INVITADO
-                // =========================
                 else
                 {
-                    eventos =
-                        eventoService.ObtenerEventosInvitado(
-                            usuarioActual.Id);
+                    eventos = eventoService.ObtenerEventosInvitado(usuarioActual.Id);
                 }
 
                 dgvEventos.DataSource = null;
                 dgvEventos.DataSource = eventos;
+                dgvEventos.ClearSelection();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(
-                    "Error al cargar eventos: "
-                    + ex.Message);
+                MessageBox.Show("Error al cargar eventos: " + ex.Message);
             }
         }
 
-        private void dgvEventos_SelectionChanged(object sender,EventArgs e)
-        {
-            CargarInvitadosEvento();
-        }
-
-        private void CargarInvitadosEvento()
+        // =====================================
+        // CARGAR TODOS LOS INVITADOS DISPONIBLES
+        // =====================================
+        private void CargarTodosInvitados()
         {
             try
             {
-                Evento seleccionado =
-                    ObtenerEventoSeleccionado();
-
-                if (seleccionado == null)
-                    return;
-
-                List<Usuario> invitados =
-                    usuarioService.ObtenerPorIds(
-                        seleccionado.InvitadosIds);
-
+                List<Usuario> invitados = usuarioService.ObtenerInvitados();
                 dgvInvitados.DataSource = null;
                 dgvInvitados.DataSource = invitados;
+                dgvInvitados.ClearSelection();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Error al cargar invitados: " + ex.Message);
             }
         }
 
+        // =====================================
+        // AGREGAR INVITADO AL EVENTO SELECCIONADO
+        // =====================================
+        private void btnAgregarInvitado_Click(object sender, EventArgs e)
+        {
+            Evento eventoSeleccionado = ObtenerEventoSeleccionado();
+            Usuario invitadoSeleccionado = ObtenerInvitadoSeleccionado();
+
+            if (eventoSeleccionado == null)
+            {
+                MessageBox.Show("Selecciona un evento.");
+                return;
+            }
+
+            if (invitadoSeleccionado == null)
+            {
+                MessageBox.Show("Selecciona un invitado.");
+                return;
+            }
+
+            // Verificar si ya está agregado
+            if (eventoSeleccionado.InvitadosIds.Contains(invitadoSeleccionado.Id))
+            {
+                MessageBox.Show("Este invitado ya está en el evento.");
+                return;
+            }
+
+            // Verificar cupo
+            int invitadosActuales = eventoSeleccionado.InvitadosIds.Count;
+            if (invitadosActuales >= eventoSeleccionado.cupoMaximo)
+            {
+                MessageBox.Show("El evento ya alcanzó el cupo máximo.");
+                return;
+            }
+
+            try
+            {
+                eventoSeleccionado.InvitadosIds.Add(invitadoSeleccionado.Id);
+                eventoService.EditarEvento(eventoSeleccionado);
+                MessageBox.Show($"Invitado '{invitadoSeleccionado.Nombre}' agregado al evento.");
+                CargarEventos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        // =====================================
+        // OBTENER EVENTO SELECCIONADO
+        // =====================================
         private Evento ObtenerEventoSeleccionado()
         {
             if (dgvEventos.SelectedRows.Count == 0)
-            {
                 return null;
-            }
 
-            return
-                (Evento)dgvEventos.SelectedRows[0]
-                .DataBoundItem;
+            return (Evento)dgvEventos.SelectedRows[0].DataBoundItem;
         }
 
-        private void btnCrear_Click(object sender, System.EventArgs e)
+        // =====================================
+        // OBTENER INVITADO SELECCIONADO
+        // =====================================
+        private Usuario ObtenerInvitadoSeleccionado()
         {
-            CrearEventoForm form =
-                new CrearEventoForm(usuarioActual);
+            if (dgvInvitados.SelectedRows.Count == 0)
+                return null;
 
+            return (Usuario)dgvInvitados.SelectedRows[0].DataBoundItem;
+        }
+
+        // =====================================
+        // BOTONES
+        // =====================================
+        private void btnCrear_Click(object sender, EventArgs e)
+        {
+            CrearEventoForm form = new CrearEventoForm(usuarioActual);
             form.ShowDialog();
-
             CargarEventos();
         }
 
-        private void btnEditar_Click(object sender, System.EventArgs e)
+        private void btnEditar_Click(object sender, EventArgs e)
         {
-            Evento seleccionado =
-                ObtenerEventoSeleccionado();
+            Evento seleccionado = ObtenerEventoSeleccionado();
+            if (seleccionado == null) return;
 
-            if (seleccionado == null)
-                return;
-
-            CrearEventoForm editar =
-                new CrearEventoForm(
-                    usuarioActual,
-                    seleccionado);
-
+            CrearEventoForm editar = new CrearEventoForm(usuarioActual, seleccionado);
             editar.ShowDialog();
-
             CargarEventos();
         }
 
-        
-
-        private void btnDeshabilitar_Click(object sender, System.EventArgs e)
+        private void btnDeshabilitar_Click(object sender, EventArgs e)
         {
-            Evento seleccionado =
-                ObtenerEventoSeleccionado();
+            Evento seleccionado = ObtenerEventoSeleccionado();
+            if (seleccionado == null) return;
 
-            if (seleccionado == null)
-                return;
+            DialogResult confirmacion = MessageBox.Show(
+                "¿Deseas deshabilitar este evento?",
+                "Confirmar",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
 
-            DialogResult confirmacion =
-                MessageBox.Show(
-                    "¿Deseas deshabilitar este evento?",
-                    "Confirmar",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Warning);
-
-            if (confirmacion != DialogResult.Yes)
-                return;
+            if (confirmacion != DialogResult.Yes) return;
 
             try
             {
-                eventoService.DeshabilitarEvento(
-                    seleccionado.Id);
-
-                MessageBox.Show(
-                    "Evento deshabilitado.");
-
+                eventoService.DeshabilitarEvento(seleccionado.Id);
+                MessageBox.Show("Evento deshabilitado.");
                 CargarEventos();
             }
             catch (Exception ex)
@@ -192,23 +294,17 @@ namespace eventPlus.Forms
             }
         }
 
-        private void btnVolver_Click(object sender, System.EventArgs e)
+        private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
         private void btnDetalle_Click(object sender, EventArgs e)
         {
-            Evento seleccionado =
-                ObtenerEventoSeleccionado();
+            Evento seleccionado = ObtenerEventoSeleccionado();
+            if (seleccionado == null) return;
 
-            if (seleccionado == null)
-                return;
-
-            DetalleEventoForm detalle =
-                new DetalleEventoForm(
-                    seleccionado);
-
+            DetalleEventoForm detalle = new DetalleEventoForm(seleccionado);
             detalle.ShowDialog();
         }
     }
