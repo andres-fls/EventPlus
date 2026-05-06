@@ -42,11 +42,11 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(245)))));
+            this.btnVolver.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.Location = new System.Drawing.Point(30, 391);
+            this.btnVolver.Location = new System.Drawing.Point(552, 381);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(80, 35);
+            this.btnVolver.Size = new System.Drawing.Size(80, 45);
             this.btnVolver.TabIndex = 18;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -56,9 +56,9 @@
             // 
             this.btnDeshabilitar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(176)))), ((int)(((byte)(176)))));
             this.btnDeshabilitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeshabilitar.Location = new System.Drawing.Point(633, 391);
+            this.btnDeshabilitar.Location = new System.Drawing.Point(668, 381);
             this.btnDeshabilitar.Name = "btnDeshabilitar";
-            this.btnDeshabilitar.Size = new System.Drawing.Size(103, 35);
+            this.btnDeshabilitar.Size = new System.Drawing.Size(103, 45);
             this.btnDeshabilitar.TabIndex = 17;
             this.btnDeshabilitar.Text = "Deshabilitar";
             this.btnDeshabilitar.UseVisualStyleBackColor = false;
@@ -66,11 +66,11 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(245)))));
+            this.btnEditar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(279, 391);
+            this.btnEditar.Location = new System.Drawing.Point(220, 381);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(80, 35);
+            this.btnEditar.Size = new System.Drawing.Size(92, 45);
             this.btnEditar.TabIndex = 16;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
@@ -78,11 +78,11 @@
             // 
             // btnCrear
             // 
-            this.btnCrear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(245)))));
+            this.btnCrear.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnCrear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCrear.Location = new System.Drawing.Point(155, 391);
+            this.btnCrear.Location = new System.Drawing.Point(70, 381);
             this.btnCrear.Name = "btnCrear";
-            this.btnCrear.Size = new System.Drawing.Size(80, 35);
+            this.btnCrear.Size = new System.Drawing.Size(96, 45);
             this.btnCrear.TabIndex = 15;
             this.btnCrear.Text = "Crear";
             this.btnCrear.UseVisualStyleBackColor = false;
@@ -91,13 +91,14 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.lblTitulo.ForeColor = System.Drawing.Color.Black;
-            this.lblTitulo.Location = new System.Drawing.Point(348, 24);
+            this.lblTitulo.Location = new System.Drawing.Point(262, 21);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(97, 25);
+            this.lblTitulo.Size = new System.Drawing.Size(253, 31);
             this.lblTitulo.TabIndex = 13;
-            this.lblTitulo.Text = "Eventos";
+            this.lblTitulo.Text = "          Eventos          ";
             // 
             // dgvEventos
             // 
@@ -105,33 +106,35 @@
             this.dgvEventos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEventos.Location = new System.Drawing.Point(12, 72);
             this.dgvEventos.Name = "dgvEventos";
-            this.dgvEventos.Size = new System.Drawing.Size(451, 281);
+            this.dgvEventos.Size = new System.Drawing.Size(433, 281);
             this.dgvEventos.TabIndex = 14;
             // 
             // dgvInvitados
             // 
             this.dgvInvitados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInvitados.Location = new System.Drawing.Point(481, 72);
+            this.dgvInvitados.Location = new System.Drawing.Point(451, 72);
             this.dgvInvitados.Name = "dgvInvitados";
-            this.dgvInvitados.Size = new System.Drawing.Size(307, 281);
+            this.dgvInvitados.Size = new System.Drawing.Size(322, 281);
             this.dgvInvitados.TabIndex = 19;
             // 
             // btnDetalle
             // 
+            this.btnDetalle.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetalle.Location = new System.Drawing.Point(397, 391);
+            this.btnDetalle.Location = new System.Drawing.Point(353, 381);
             this.btnDetalle.Name = "btnDetalle";
-            this.btnDetalle.Size = new System.Drawing.Size(80, 35);
+            this.btnDetalle.Size = new System.Drawing.Size(92, 45);
             this.btnDetalle.TabIndex = 21;
             this.btnDetalle.Text = "Detalle";
-            this.btnDetalle.UseVisualStyleBackColor = true;
+            this.btnDetalle.UseVisualStyleBackColor = false;
             this.btnDetalle.Click += new System.EventHandler(this.btnDetalle_Click);
             // 
             // EventosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.LightSlateGray;
+            this.ClientSize = new System.Drawing.Size(785, 450);
             this.Controls.Add(this.btnDetalle);
             this.Controls.Add(this.dgvInvitados);
             this.Controls.Add(this.btnVolver);

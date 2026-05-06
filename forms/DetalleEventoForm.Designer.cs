@@ -198,18 +198,20 @@
             // 
             // btnCerrar
             // 
+            this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(176)))), ((int)(((byte)(176)))));
             this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrar.Location = new System.Drawing.Point(678, 399);
+            this.btnCerrar.Location = new System.Drawing.Point(672, 399);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(86, 39);
+            this.btnCerrar.Size = new System.Drawing.Size(92, 39);
             this.btnCerrar.TabIndex = 13;
             this.btnCerrar.Text = "Cerrar";
-            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.UseVisualStyleBackColor = false;
             // 
             // DetalleEventoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSlateGray;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.dgvInvitados);

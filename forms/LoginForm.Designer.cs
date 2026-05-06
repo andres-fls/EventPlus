@@ -37,23 +37,26 @@ namespace eventPlus.Forms
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(347, 54);
+            this.lblTitulo.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.lblTitulo.Location = new System.Drawing.Point(-4, 16);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(104, 20);
+            this.lblTitulo.Size = new System.Drawing.Size(324, 31);
             this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "Iniciar Sesion";
+            this.lblTitulo.Text = "           Iniciar Sesion          ";
             // 
             // lblCorreo
             // 
             this.lblCorreo.AutoSize = true;
             this.lblCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCorreo.Location = new System.Drawing.Point(235, 96);
+            this.lblCorreo.Location = new System.Drawing.Point(47, 93);
             this.lblCorreo.Name = "lblCorreo";
             this.lblCorreo.Size = new System.Drawing.Size(57, 20);
             this.lblCorreo.TabIndex = 1;
@@ -62,7 +65,7 @@ namespace eventPlus.Forms
             // txtCorreo
             // 
             this.txtCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreo.Location = new System.Drawing.Point(350, 96);
+            this.txtCorreo.Location = new System.Drawing.Point(162, 93);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(100, 26);
             this.txtCorreo.TabIndex = 2;
@@ -71,7 +74,7 @@ namespace eventPlus.Forms
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(237, 147);
+            this.lblPassword.Location = new System.Drawing.Point(47, 153);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(92, 20);
             this.lblPassword.TabIndex = 3;
@@ -80,7 +83,7 @@ namespace eventPlus.Forms
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(350, 139);
+            this.txtPassword.Location = new System.Drawing.Point(162, 150);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(100, 26);
             this.txtPassword.TabIndex = 4;
@@ -88,44 +91,58 @@ namespace eventPlus.Forms
             // 
             // btnLogin
             // 
+            this.btnLogin.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(360, 231);
+            this.btnLogin.Location = new System.Drawing.Point(90, 200);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(90, 31);
+            this.btnLogin.Size = new System.Drawing.Size(130, 52);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "Iniciar Sesion";
-            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // btnSalir
             // 
+            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(176)))), ((int)(((byte)(176)))));
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(361, 289);
+            this.btnSalir.Location = new System.Drawing.Point(203, 272);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(90, 31);
+            this.btnSalir.Size = new System.Drawing.Size(90, 38);
             this.btnSalir.TabIndex = 7;
             this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.LightSlateGray;
+            this.groupBox1.Controls.Add(this.btnLogin);
+            this.groupBox1.Controls.Add(this.lblTitulo);
+            this.groupBox1.Controls.Add(this.btnSalir);
+            this.groupBox1.Controls.Add(this.lblCorreo);
+            this.groupBox1.Controls.Add(this.txtPassword);
+            this.groupBox1.Controls.Add(this.txtCorreo);
+            this.groupBox1.Controls.Add(this.lblPassword);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(313, 327);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
             // 
             // LoginForm
             // 
             this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.lblPassword);
-            this.Controls.Add(this.txtCorreo);
-            this.Controls.Add(this.lblCorreo);
-            this.Controls.Add(this.lblTitulo);
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.ClientSize = new System.Drawing.Size(341, 359);
+            this.Controls.Add(this.groupBox1);
             this.Name = "LoginForm";
             this.Text = "LoginForm";
             this.Load += new System.EventHandler(this.LoginForm_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -143,6 +160,7 @@ namespace eventPlus.Forms
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 
