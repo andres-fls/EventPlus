@@ -99,5 +99,10 @@ namespace eventPlus.Services
                 .Find(u => u.Rol == "Invitado")
                 .ToList();
         }
+
+        public List<Usuario> ObtenerPorIds(List<string> ids)
+        {
+            return new List<Usuario>();
+        }
     }
 }

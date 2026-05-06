@@ -1,4 +1,4 @@
-﻿namespace eventPlus.forms
+﻿namespace eventPlus.Forms
 {
     partial class DetalleEventoForm
     {
@@ -40,13 +40,13 @@
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblHora = new System.Windows.Forms.Label();
             this.lblTotalInvitados = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvInvitados = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCerrar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInvitados)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -163,18 +163,18 @@
             this.lblTotalInvitados.Size = new System.Drawing.Size(0, 20);
             this.lblTotalInvitados.TabIndex = 11;
             // 
-            // dataGridView1
+            // dgvInvitados
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvInvitados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInvitados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3,
             this.Column4});
-            this.dataGridView1.Location = new System.Drawing.Point(32, 124);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(732, 263);
-            this.dataGridView1.TabIndex = 12;
+            this.dgvInvitados.Location = new System.Drawing.Point(32, 124);
+            this.dgvInvitados.Name = "dgvInvitados";
+            this.dgvInvitados.Size = new System.Drawing.Size(732, 263);
+            this.dgvInvitados.TabIndex = 12;
             // 
             // Column1
             // 
@@ -212,7 +212,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnCerrar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvInvitados);
             this.Controls.Add(this.lblTotalInvitados);
             this.Controls.Add(this.lblHora);
             this.Controls.Add(this.lblFecha);
@@ -227,7 +227,8 @@
             this.Controls.Add(this.label1);
             this.Name = "DetalleEventoForm";
             this.Text = "DetalleEventoForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.DetalleEventoForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInvitados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -247,7 +248,7 @@
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Label lblTotalInvitados;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvInvitados;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;

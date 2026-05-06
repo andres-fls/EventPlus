@@ -32,24 +32,21 @@
             this.label2 = new System.Windows.Forms.Label();
             this.chkActivo = new System.Windows.Forms.CheckBox();
             this.lblEstado = new System.Windows.Forms.Label();
+            this.dtpHora = new System.Windows.Forms.DateTimePicker();
             this.lblCupo = new System.Windows.Forms.Label();
             this.numCupo = new System.Windows.Forms.NumericUpDown();
             this.cmbTipo = new System.Windows.Forms.ComboBox();
             this.lblTipo = new System.Windows.Forms.Label();
+            this.lblFecha = new System.Windows.Forms.Label();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dtpHoraEveFin = new System.Windows.Forms.DateTimePicker();
-            this.dtpFechaEveFin = new System.Windows.Forms.DateTimePicker();
             this.cmbCategEvento = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.dtpHoraEve = new System.Windows.Forms.DateTimePicker();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.lblfechafin = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblDescripcion = new System.Windows.Forms.Label();
-            this.dtpFechaEve = new System.Windows.Forms.DateTimePicker();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.lblLugar = new System.Windows.Forms.Label();
-            this.lblFecha = new System.Windows.Forms.Label();
             this.txtLugar = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
@@ -62,19 +59,16 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(95)))), ((int)(((byte)(95)))));
-            this.groupBox2.Controls.Add(this.dtpHoraEveFin);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.dtpFechaEveFin);
             this.groupBox2.Controls.Add(this.chkActivo);
             this.groupBox2.Controls.Add(this.lblEstado);
-            this.groupBox2.Controls.Add(this.dtpHoraEve);
+            this.groupBox2.Controls.Add(this.dtpHora);
             this.groupBox2.Controls.Add(this.lblCupo);
             this.groupBox2.Controls.Add(this.numCupo);
-            this.groupBox2.Controls.Add(this.lblfechafin);
             this.groupBox2.Controls.Add(this.cmbTipo);
             this.groupBox2.Controls.Add(this.lblTipo);
             this.groupBox2.Controls.Add(this.lblFecha);
-            this.groupBox2.Controls.Add(this.dtpFechaEve);
+            this.groupBox2.Controls.Add(this.dtpFecha);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(460, 53);
             this.groupBox2.Name = "groupBox2";
@@ -98,7 +92,7 @@
             this.chkActivo.Checked = true;
             this.chkActivo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkActivo.ForeColor = System.Drawing.Color.White;
-            this.chkActivo.Location = new System.Drawing.Point(158, 292);
+            this.chkActivo.Location = new System.Drawing.Point(158, 279);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(125, 24);
             this.chkActivo.TabIndex = 18;
@@ -109,17 +103,26 @@
             // 
             this.lblEstado.AutoSize = true;
             this.lblEstado.ForeColor = System.Drawing.Color.White;
-            this.lblEstado.Location = new System.Drawing.Point(8, 293);
+            this.lblEstado.Location = new System.Drawing.Point(8, 280);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(60, 20);
             this.lblEstado.TabIndex = 17;
             this.lblEstado.Text = "Estado";
             // 
+            // dtpHora
+            // 
+            this.dtpHora.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpHora.Location = new System.Drawing.Point(162, 119);
+            this.dtpHora.Name = "dtpHora";
+            this.dtpHora.ShowUpDown = true;
+            this.dtpHora.Size = new System.Drawing.Size(121, 26);
+            this.dtpHora.TabIndex = 12;
+            // 
             // lblCupo
             // 
             this.lblCupo.AutoSize = true;
             this.lblCupo.ForeColor = System.Drawing.Color.White;
-            this.lblCupo.Location = new System.Drawing.Point(8, 203);
+            this.lblCupo.Location = new System.Drawing.Point(8, 182);
             this.lblCupo.Name = "lblCupo";
             this.lblCupo.Size = new System.Drawing.Size(105, 20);
             this.lblCupo.TabIndex = 6;
@@ -127,7 +130,7 @@
             // 
             // numCupo
             // 
-            this.numCupo.Location = new System.Drawing.Point(158, 201);
+            this.numCupo.Location = new System.Drawing.Point(158, 176);
             this.numCupo.Maximum = new decimal(new int[] {
             500,
             0,
@@ -154,7 +157,7 @@
             this.cmbTipo.Items.AddRange(new object[] {
             "Publico",
             "Privado"});
-            this.cmbTipo.Location = new System.Drawing.Point(158, 244);
+            this.cmbTipo.Location = new System.Drawing.Point(157, 228);
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(121, 28);
             this.cmbTipo.TabIndex = 14;
@@ -163,11 +166,29 @@
             // 
             this.lblTipo.AutoSize = true;
             this.lblTipo.ForeColor = System.Drawing.Color.White;
-            this.lblTipo.Location = new System.Drawing.Point(8, 247);
+            this.lblTipo.Location = new System.Drawing.Point(8, 231);
             this.lblTipo.Name = "lblTipo";
             this.lblTipo.Size = new System.Drawing.Size(91, 20);
             this.lblTipo.TabIndex = 7;
             this.lblTipo.Text = "Tipo evento";
+            // 
+            // lblFecha
+            // 
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.ForeColor = System.Drawing.Color.White;
+            this.lblFecha.Location = new System.Drawing.Point(8, 77);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(145, 20);
+            this.lblFecha.TabIndex = 4;
+            this.lblFecha.Text = "Fecha inicio evento";
+            // 
+            // dtpFecha
+            // 
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha.Location = new System.Drawing.Point(12, 119);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(121, 26);
+            this.dtpFecha.TabIndex = 10;
             // 
             // groupBox1
             // 
@@ -186,22 +207,6 @@
             this.groupBox1.Size = new System.Drawing.Size(403, 373);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
-            // 
-            // dtpHoraEveFin
-            // 
-            this.dtpHoraEveFin.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpHoraEveFin.Location = new System.Drawing.Point(173, 140);
-            this.dtpHoraEveFin.Name = "dtpHoraEveFin";
-            this.dtpHoraEveFin.Size = new System.Drawing.Size(121, 26);
-            this.dtpHoraEveFin.TabIndex = 18;
-            // 
-            // dtpFechaEveFin
-            // 
-            this.dtpFechaEveFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaEveFin.Location = new System.Drawing.Point(173, 98);
-            this.dtpFechaEveFin.Name = "dtpFechaEveFin";
-            this.dtpFechaEveFin.Size = new System.Drawing.Size(121, 26);
-            this.dtpFechaEveFin.TabIndex = 17;
             // 
             // cmbCategEvento
             // 
@@ -225,15 +230,6 @@
             this.label4.TabIndex = 14;
             this.label4.Text = "Categoria";
             // 
-            // dtpHoraEve
-            // 
-            this.dtpHoraEve.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpHoraEve.Location = new System.Drawing.Point(12, 140);
-            this.dtpHoraEve.Name = "dtpHoraEve";
-            this.dtpHoraEve.ShowUpDown = true;
-            this.dtpHoraEve.Size = new System.Drawing.Size(121, 26);
-            this.dtpHoraEve.TabIndex = 12;
-            // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
@@ -243,16 +239,6 @@
             this.lblNombre.Size = new System.Drawing.Size(144, 20);
             this.lblNombre.TabIndex = 1;
             this.lblNombre.Text = "Nombre del Evento";
-            // 
-            // lblfechafin
-            // 
-            this.lblfechafin.AutoSize = true;
-            this.lblfechafin.ForeColor = System.Drawing.Color.White;
-            this.lblfechafin.Location = new System.Drawing.Point(169, 68);
-            this.lblfechafin.Name = "lblfechafin";
-            this.lblfechafin.Size = new System.Drawing.Size(127, 20);
-            this.lblfechafin.TabIndex = 5;
-            this.lblfechafin.Text = "Fecha fin evento";
             // 
             // txtNombre
             // 
@@ -270,14 +256,6 @@
             this.lblDescripcion.Size = new System.Drawing.Size(92, 20);
             this.lblDescripcion.TabIndex = 2;
             this.lblDescripcion.Text = "Descripcion";
-            // 
-            // dtpFechaEve
-            // 
-            this.dtpFechaEve.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaEve.Location = new System.Drawing.Point(12, 98);
-            this.dtpFechaEve.Name = "dtpFechaEve";
-            this.dtpFechaEve.Size = new System.Drawing.Size(121, 26);
-            this.dtpFechaEve.TabIndex = 10;
             // 
             // txtDescripcion
             // 
@@ -297,16 +275,6 @@
             this.lblLugar.TabIndex = 3;
             this.lblLugar.Text = "Lugar";
             // 
-            // lblFecha
-            // 
-            this.lblFecha.AutoSize = true;
-            this.lblFecha.ForeColor = System.Drawing.Color.White;
-            this.lblFecha.Location = new System.Drawing.Point(6, 68);
-            this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(145, 20);
-            this.lblFecha.TabIndex = 4;
-            this.lblFecha.Text = "Fecha inicio evento";
-            // 
             // txtLugar
             // 
             this.txtLugar.Location = new System.Drawing.Point(10, 257);
@@ -324,6 +292,7 @@
             this.btnCancelar.TabIndex = 23;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 
@@ -335,6 +304,7 @@
             this.btnGuardar.TabIndex = 22;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // label1
             // 
@@ -359,6 +329,7 @@
             this.Controls.Add(this.label1);
             this.Name = "CrearEventoForm";
             this.Text = "CrearEventoForm";
+            this.Load += new System.EventHandler(this.CrearEventoForm_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCupo)).EndInit();
@@ -380,16 +351,13 @@
         private System.Windows.Forms.ComboBox cmbTipo;
         private System.Windows.Forms.Label lblTipo;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DateTimePicker dtpHoraEveFin;
-        private System.Windows.Forms.DateTimePicker dtpFechaEveFin;
         private System.Windows.Forms.ComboBox cmbCategEvento;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dtpHoraEve;
+        private System.Windows.Forms.DateTimePicker dtpHora;
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.Label lblfechafin;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblDescripcion;
-        private System.Windows.Forms.DateTimePicker dtpFechaEve;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label lblLugar;
         private System.Windows.Forms.Label lblFecha;
