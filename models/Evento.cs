@@ -21,7 +21,9 @@ namespace eventPlus.Models
 
         public string descripcionEvento { get; set; }
 
-        public DateTime FechaHora { get; set; }
+        public DateTime Fecha { get; set; }
+
+        public DateTime Hora { get; set; }
 
         public int cupoMaximo { get; set; }
 

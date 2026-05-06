@@ -30,14 +30,18 @@ namespace eventPlus.Services
             if (string.IsNullOrWhiteSpace(evento.IdLider))
                 throw new Exception("El líder es obligatorio.");
 
-            if (evento.FechaHora <= DateTime.Now)
+            if (evento.Fecha <= DateTime.Now)
                 throw new Exception("La fecha debe ser futura.");
+
+            if (evento.Hora <= DateTime.Now)
+                throw new Exception("La hora debe ser futura.");
 
             // 🔴 VALIDAR CRUCE DEL LÍDER
             bool liderOcupado = eventos.Find(e =>
                 e.IdLider == evento.IdLider &&
                 e.Activo &&
-                e.FechaHora == evento.FechaHora
+                e.Fecha == evento.Fecha &&
+                e.Hora == evento.Hora
             ).Any();
 
             if (liderOcupado)
@@ -50,7 +54,8 @@ namespace eventPlus.Services
                 {
                     bool invitadoOcupado = eventos.Find(e =>
                         e.Activo &&
-                        e.FechaHora == evento.FechaHora &&
+                        e.Fecha == evento.Fecha &&
+                        e.Hora == evento.Hora &&
                         e.InvitadosIds != null &&
                         e.InvitadosIds.Contains(invitadoId)
                     ).Any();
@@ -83,7 +88,8 @@ namespace eventPlus.Services
                 e.Id != evento.Id &&
                 e.IdLider == evento.IdLider &&
                 e.Activo &&
-                e.FechaHora == evento.FechaHora
+                e.Fecha == evento.Fecha &&
+                e.Hora == evento.Hora
             ).Any();
 
             if (liderOcupado)
@@ -97,7 +103,8 @@ namespace eventPlus.Services
                     bool invitadoOcupado = eventos.Find(e =>
                         e.Id != evento.Id &&
                         e.Activo &&
-                        e.FechaHora == evento.FechaHora &&
+                        e.Fecha == evento.Fecha &&
+                        e.Hora == evento.Hora &&
                         e.InvitadosIds != null &&
                         e.InvitadosIds.Contains(invitadoId)
                     ).Any();
@@ -147,11 +154,33 @@ namespace eventPlus.Services
                 return new List<Evento>();
 
             return eventos.Find(e =>
-                e.Activo &&
-                e.FechaHora.Month == mes &&
-                (e.IdLider == usuarioId ||
-                 (e.InvitadosIds != null && e.InvitadosIds.Contains(usuarioId)))
+            e.Activo &&
+            e.Fecha.Month == mes &&
+            (e.IdLider == usuarioId ||
+            (e.InvitadosIds != null &&
+            e.InvitadosIds.Contains(usuarioId)))
             ).ToList();
         }
+
+        public List<Evento> ObtenerTodos()
+        {
+            return new List<Evento>();
+        }
+
+        public List<Evento> ObtenerEventosInvitado(string idUsuario)
+        {
+            return new List<Evento>();
+        }
+
+        public void ActualizarEvento(Evento evento)
+        {
+
+        }
+
+        public void DeshabilitarEvento(string id)
+        {
+
+        }
+
     }
 }

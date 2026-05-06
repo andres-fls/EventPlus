@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using eventPlus.Models;
 using eventPlus.Services;
+using MongoDB.Driver;
 
 namespace eventPlus.Forms
 {
@@ -14,60 +15,85 @@ namespace eventPlus.Forms
             InitializeComponent();
         }
 
+        
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            txtCorreo.Text = txtCorreo.Text.Trim();
+            txtPassword.Text = txtPassword.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(txtCorreo.Text))
+            {
+                MessageBox.Show("Ingrese el correo");
+                txtCorreo.Focus();
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtPassword.Text))
+            {
+                MessageBox.Show("Ingrese la contraseña");
+                txtPassword.Focus();
+                return;
+            }
+
             try
             {
-                string correo = txtCorreo.Text.Trim();
-                string password = txtPassword.Text.Trim();
+                Usuario usuario = usuarioService.Login(txtCorreo.Text, txtPassword.Text);
 
-                // VALIDACIONES
-                if (string.IsNullOrWhiteSpace(correo))
-                {
-                    MessageBox.Show("Ingrese el correo.");
-                    return;
-                }
+                // ✅ Mensaje personalizado según el rol
+                string mensaje = usuario.Rol == "Lider"
+                    ? "Iniciaste sesión como Líder"
+                    : "Iniciaste sesión como Invitado";
 
-                if (string.IsNullOrWhiteSpace(password))
-                {
-                    MessageBox.Show("Ingrese la contraseña.");
-                    return;
-                }
+                MessageBox.Show(
+                    $"¡Bienvenido {usuario.Nombre}! {mensaje}",
+                    "Login exitoso",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
 
-                // LOGIN
-                Usuario usuario = usuarioService.Login(correo, password);
-
-                if (usuario == null)
-                {
-                    MessageBox.Show("Correo o contraseña incorrectos.");
-                    return;
-                }
-
-                // ABRIR MENÚ
                 MenuForm menu = new MenuForm(usuario);
-
                 menu.Show();
-
                 this.Hide();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show(
+                    ex.Message,
+                    "Error de autenticación",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+
+                txtPassword.Clear();
+                txtCorreo.Focus();
             }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult resultado = MessageBox.Show(
+                "¿Deseas salir?",
+                "Confirmación",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (resultado == DialogResult.Yes)
+                Application.Exit();
         }
 
         private void linkRegistro_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             RegistroForm registro = new RegistroForm();
 
-            registro.Show();
-
             this.Hide();
+            registro.ShowDialog();
+            this.Show();
+
+            txtCorreo.Clear();
+            txtPassword.Clear();
+            txtCorreo.Focus();
         }
+
     }
 }

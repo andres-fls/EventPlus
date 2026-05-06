@@ -62,7 +62,9 @@
     <Reference Include="Snappier, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a1b25124e6e13a3a, processorArchitecture=MSIL">
       <HintPath>packages\Snappier.1.3.0\lib\net472\Snappier.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Buffers, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Buffers.4.6.1\lib\net462\System.Buffers.dll</HintPath>
     </Reference>
@@ -158,6 +160,12 @@
     <Compile Include="forms\CrearEventoForm.Designer.cs">
       <DependentUpon>CrearEventoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\DetalleEventoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\DetalleEventoForm.Designer.cs">
+      <DependentUpon>DetalleEventoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\EventosForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +198,9 @@
     <Compile Include="services\UsuarioService.cs" />
     <EmbeddedResource Include="forms\CrearEventoForm.resx">
       <DependentUpon>CrearEventoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\DetalleEventoForm.resx">
+      <DependentUpon>DetalleEventoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\EventosForm.resx">
       <DependentUpon>EventosForm.cs</DependentUpon>

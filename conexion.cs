@@ -22,9 +22,9 @@ namespace eventPlus.Data
         }
 
         public IMongoCollection<Usuario> Usuarios =>
-            database.GetCollection<Usuario>("usuarios");
+            database.GetCollection<Usuario>("Usuarios");
 
         public IMongoCollection<Evento> Eventos =>
-            database.GetCollection<Evento>("eventos");
+            database.GetCollection<Evento>("Eventos");
     }
 }
