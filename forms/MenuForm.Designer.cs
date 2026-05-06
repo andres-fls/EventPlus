@@ -41,24 +41,24 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(-15, 16);
+            this.label1.Location = new System.Drawing.Point(90, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(372, 31);
+            this.label1.Size = new System.Drawing.Size(148, 31);
             this.label1.TabIndex = 0;
-            this.label1.Text = "                Bienvenido                ";
+            this.label1.Text = "Bienvenido";
             // 
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(56, 90);
+            this.lblUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.Location = new System.Drawing.Point(105, 58);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(220, 25);
+            this.lblUsuario.Size = new System.Drawing.Size(146, 24);
             this.lblUsuario.TabIndex = 1;
-            this.lblUsuario.Text = "       Nombre usuario       ";
+            this.lblUsuario.Text = "Nombre usuario";
             // 
             // btnMisEventos
             // 
@@ -132,6 +132,7 @@
             this.ClientSize = new System.Drawing.Size(360, 430);
             this.Controls.Add(this.groupBox1);
             this.Name = "MenuForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuForm";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -228,6 +228,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "DetalleEventoForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DetalleEventoForm";
             this.Load += new System.EventHandler(this.DetalleEventoForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvitados)).EndInit();

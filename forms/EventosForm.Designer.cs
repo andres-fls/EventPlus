@@ -44,7 +44,7 @@
             // 
             this.btnVolver.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.Location = new System.Drawing.Point(552, 381);
+            this.btnVolver.Location = new System.Drawing.Point(492, 381);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(80, 45);
             this.btnVolver.TabIndex = 18;
@@ -56,7 +56,7 @@
             // 
             this.btnDeshabilitar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(176)))), ((int)(((byte)(176)))));
             this.btnDeshabilitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeshabilitar.Location = new System.Drawing.Point(668, 381);
+            this.btnDeshabilitar.Location = new System.Drawing.Point(637, 381);
             this.btnDeshabilitar.Name = "btnDeshabilitar";
             this.btnDeshabilitar.Size = new System.Drawing.Size(103, 45);
             this.btnDeshabilitar.TabIndex = 17;
@@ -68,7 +68,7 @@
             // 
             this.btnEditar.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(220, 381);
+            this.btnEditar.Location = new System.Drawing.Point(192, 381);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(92, 45);
             this.btnEditar.TabIndex = 16;
@@ -80,7 +80,7 @@
             // 
             this.btnCrear.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnCrear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCrear.Location = new System.Drawing.Point(70, 381);
+            this.btnCrear.Location = new System.Drawing.Point(36, 381);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(96, 45);
             this.btnCrear.TabIndex = 15;
@@ -121,7 +121,7 @@
             // 
             this.btnDetalle.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetalle.Location = new System.Drawing.Point(353, 381);
+            this.btnDetalle.Location = new System.Drawing.Point(339, 381);
             this.btnDetalle.Name = "btnDetalle";
             this.btnDetalle.Size = new System.Drawing.Size(92, 45);
             this.btnDetalle.TabIndex = 21;
@@ -144,6 +144,7 @@
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.dgvEventos);
             this.Name = "EventosForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EventosForm";
             this.Load += new System.EventHandler(this.EventosForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEventos)).EndInit();

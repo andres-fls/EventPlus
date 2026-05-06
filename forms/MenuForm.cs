@@ -13,6 +13,8 @@ namespace eventPlus.Forms
             InitializeComponent();
 
             usuarioActual = usuario;
+
+            lblUsuario.Text = usuario.Nombre;
         }
 
         private void MenuForm_Load(object sender, EventArgs e)

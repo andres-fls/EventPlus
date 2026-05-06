@@ -272,6 +272,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Name = "RegistroForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegistroForm";
             this.Load += new System.EventHandler(this.RegistroForm_Load);
             this.groupBox1.ResumeLayout(false);

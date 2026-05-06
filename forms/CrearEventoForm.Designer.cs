@@ -331,6 +331,7 @@
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.label1);
             this.Name = "CrearEventoForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CrearEventoForm";
             this.Load += new System.EventHandler(this.CrearEventoForm_Load);
             this.groupBox2.ResumeLayout(false);
