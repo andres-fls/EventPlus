@@ -34,6 +34,7 @@
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.btnGestionEventos = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnRegistro = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,7 +42,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(88, 35);
+            this.label1.Location = new System.Drawing.Point(88, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(148, 31);
             this.label1.TabIndex = 0;
@@ -51,7 +52,7 @@
             // 
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(89, 98);
+            this.lblUsuario.Location = new System.Drawing.Point(89, 80);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(147, 25);
             this.lblUsuario.TabIndex = 1;
@@ -60,7 +61,7 @@
             // btnMisEventos
             // 
             this.btnMisEventos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMisEventos.Location = new System.Drawing.Point(109, 265);
+            this.btnMisEventos.Location = new System.Drawing.Point(109, 289);
             this.btnMisEventos.Name = "btnMisEventos";
             this.btnMisEventos.Size = new System.Drawing.Size(111, 38);
             this.btnMisEventos.TabIndex = 2;
@@ -71,7 +72,7 @@
             // btnCerrarSesion
             // 
             this.btnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarSesion.Location = new System.Drawing.Point(119, 341);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(119, 353);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(86, 38);
             this.btnCerrarSesion.TabIndex = 3;
@@ -82,7 +83,7 @@
             // btnGestionEventos
             // 
             this.btnGestionEventos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGestionEventos.Location = new System.Drawing.Point(109, 179);
+            this.btnGestionEventos.Location = new System.Drawing.Point(109, 214);
             this.btnGestionEventos.Name = "btnGestionEventos";
             this.btnGestionEventos.Size = new System.Drawing.Size(111, 50);
             this.btnGestionEventos.TabIndex = 4;
@@ -92,6 +93,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnRegistro);
             this.groupBox1.Controls.Add(this.btnMisEventos);
             this.groupBox1.Controls.Add(this.btnGestionEventos);
             this.groupBox1.Controls.Add(this.label1);
@@ -102,6 +104,17 @@
             this.groupBox1.Size = new System.Drawing.Size(334, 426);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
+            // 
+            // btnRegistro
+            // 
+            this.btnRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistro.Location = new System.Drawing.Point(109, 141);
+            this.btnRegistro.Name = "btnRegistro";
+            this.btnRegistro.Size = new System.Drawing.Size(111, 49);
+            this.btnRegistro.TabIndex = 5;
+            this.btnRegistro.Text = "Registrar usuario";
+            this.btnRegistro.UseVisualStyleBackColor = true;
+            this.btnRegistro.Click += new System.EventHandler(this.btnRegistro_Click);
             // 
             // MenuForm
             // 
@@ -125,5 +138,6 @@
         private System.Windows.Forms.Button btnCerrarSesion;
         private System.Windows.Forms.Button btnGestionEventos;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnRegistro;
     }
 }

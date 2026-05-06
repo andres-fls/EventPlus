@@ -35,9 +35,11 @@ namespace eventPlus.Forms
             CrearEventoForm form =
                 new CrearEventoForm(usuarioActual);
 
-            form.Show();
-
             this.Hide();
+
+            form.ShowDialog();
+
+            this.Show();
         }
 
         // ==========================
@@ -48,9 +50,11 @@ namespace eventPlus.Forms
             EventosForm form =
                 new EventosForm(usuarioActual);
 
-            form.Show();
-
             this.Hide();
+
+            form.ShowDialog();
+
+            this.Show();
         }
 
         // ==========================
@@ -63,6 +67,16 @@ namespace eventPlus.Forms
             login.Show();
 
             this.Close();
+        }
+
+        private void btnRegistro_Click(object sender, EventArgs e)
+        {
+            RegistroForm registro = new RegistroForm();
+
+            this.Hide();
+            registro.ShowDialog();
+            this.Show();
+
         }
     }
 }

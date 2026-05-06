@@ -13,5 +13,42 @@ namespace eventPlus.Forms
 
             usuarioActual = usuario;
         }
+        private void EventosForm_Load(object sender, System.EventArgs e)
+        {
+            if (usuarioActual.Rol == "Invitado")
+            {
+                dgvUsuarios.Visible = false;
+
+                btnCrear.Visible = false;
+                btnEditar.Visible = false;
+                btnEliminar.Visible = false;
+            }
+        }
+        private void btnCrear_Click(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void btnEditar_Click(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void btnCargar_Click(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void btnEliminar_Click(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void btnVolver_Click(object sender, System.EventArgs e)
+        {
+
+        }
+
+        
     }
 }
