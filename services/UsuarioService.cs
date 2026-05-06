@@ -3,6 +3,7 @@ using eventPlus.Data;
 using System.Collections.Generic;
 using System;
 using eventPlus.Models;
+using System.Windows.Forms;
 
 namespace eventPlus.Services
 {
@@ -68,9 +69,11 @@ namespace eventPlus.Services
         // ==========================
         public Usuario Login(string correo, string password)
         {
-            if (string.IsNullOrWhiteSpace(correo) ||
-                string.IsNullOrWhiteSpace(password))
+            if (string.IsNullOrWhiteSpace(correo) || string.IsNullOrWhiteSpace(password))
                 throw new Exception("Correo y contraseña son obligatorios.");
+
+            correo = correo.Trim();
+            password = password.Trim();
 
             Usuario usuario = usuarios
                 .Find(u => u.Correo == correo && u.Password == password)

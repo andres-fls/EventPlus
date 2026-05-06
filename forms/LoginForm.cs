@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using eventPlus.Models;
 using eventPlus.Services;
+using MongoDB.Driver;
 
 namespace eventPlus.Forms
 {
@@ -36,20 +37,21 @@ namespace eventPlus.Forms
 
             try
             {
-                Usuario usuario = usuarioService.Login(
-                    txtCorreo.Text,
-                    txtPassword.Text
-                );
+                Usuario usuario = usuarioService.Login(txtCorreo.Text, txtPassword.Text);
+
+                // ✅ Mensaje personalizado según el rol
+                string mensaje = usuario.Rol == "Lider"
+                    ? "Iniciaste sesión como Líder"
+                    : "Iniciaste sesión como Invitado";
 
                 MessageBox.Show(
-                    $"Bienvenido ({usuario})",
+                    $"¡Bienvenido {usuario.Nombre}! {mensaje}",
                     "Login exitoso",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information
                 );
 
                 MenuForm menu = new MenuForm(usuario);
-
                 menu.Show();
                 this.Hide();
             }
@@ -92,5 +94,6 @@ namespace eventPlus.Forms
             txtPassword.Clear();
             txtCorreo.Focus();
         }
+
     }
 }
