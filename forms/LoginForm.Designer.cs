@@ -44,7 +44,7 @@ namespace eventPlus.Forms
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.lblTitulo.Location = new System.Drawing.Point(-4, 16);
             this.lblTitulo.Name = "lblTitulo";

@@ -48,7 +48,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -255,7 +254,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(-2, 9);
@@ -264,25 +263,12 @@
             this.label1.TabIndex = 31;
             this.label1.Text = "                      REGISTRO DE  INVITADOS                        ";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(-2, 429);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(664, 29);
-            this.label7.TabIndex = 32;
-            this.label7.Text = "                                                                                 " +
-    "            ";
-            // 
             // RegistroForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSlateGray;
             this.ClientSize = new System.Drawing.Size(658, 465);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Name = "RegistroForm";
@@ -316,6 +302,5 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label7;
     }
 }
