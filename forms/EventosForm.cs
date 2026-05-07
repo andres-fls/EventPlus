@@ -40,14 +40,14 @@ namespace eventPlus.Forms
             {
                 DataPropertyName = "NombreEvento",
                 HeaderText = "Evento",
-                Width = 200
+                Width = 150
             });
 
             dgvEventos.Columns.Add(new DataGridViewTextBoxColumn
             {
                 DataPropertyName = "Fecha",
                 HeaderText = "Fecha",
-                Width = 100,
+                Width = 70,
                 DefaultCellStyle = new DataGridViewCellStyle { Format = "dd/MM/yyyy" }
             });
 
@@ -55,7 +55,7 @@ namespace eventPlus.Forms
             {
                 DataPropertyName = "Hora",
                 HeaderText = "Hora",
-                Width = 80,
+                Width = 45,
                 DefaultCellStyle = new DataGridViewCellStyle { Format = "HH:mm" }
             });
 
@@ -70,15 +70,16 @@ namespace eventPlus.Forms
             {
                 DataPropertyName = "cupoMaximo",
                 HeaderText = "Cupo",
-                Width = 60
+                Width = 40
             });
 
             dgvEventos.Columns.Add(new DataGridViewTextBoxColumn
             {
                 DataPropertyName = "Activo",
                 HeaderText = "Activo",
-                Width = 60
+                Width = 40
             });
+
         }
 
         // =====================================
@@ -93,28 +94,28 @@ namespace eventPlus.Forms
             {
                 DataPropertyName = "Nombre",
                 HeaderText = "Nombre",
-                Width = 180
+                Width = 100
             });
 
             dgvInvitados.Columns.Add(new DataGridViewTextBoxColumn
             {
                 DataPropertyName = "Correo",
                 HeaderText = "Correo",
-                Width = 200
+                Width = 130
             });
 
             dgvInvitados.Columns.Add(new DataGridViewTextBoxColumn
             {
                 DataPropertyName = "Telefono",
                 HeaderText = "Teléfono",
-                Width = 120
+                Width = 75
             });
 
             dgvInvitados.Columns.Add(new DataGridViewTextBoxColumn
             {
                 DataPropertyName = "Edad",
                 HeaderText = "Edad",
-                Width = 60
+                Width = 30
             });
         }
 
