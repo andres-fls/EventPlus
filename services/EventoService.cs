@@ -149,10 +149,19 @@ namespace eventPlus.Services
             ).ToList();
         }
 
+        // Luego siguen ObtenerTodos, ObtenerEventosInvitado, etc.
+
         public List<Evento> ObtenerTodos()
         {
-            return eventos.Find(e => e.Activo).ToList();
+            return ObtenerTodos(true);
         }
+        
+        public List<Evento> ObtenerTodos(bool soloActivos = true)
+        {
+            var filtro = soloActivos ? Builders<Evento>.Filter.Eq(e => e.Activo, true) : Builders<Evento>.Filter.Empty;
+            return eventos.Find(filtro).ToList();
+        }
+      
 
         public List<Evento> ObtenerEventosInvitado(string idUsuario)
         {
@@ -165,12 +174,46 @@ namespace eventPlus.Services
 
         public void DeshabilitarEvento(string idEvento)
         {
-            if (string.IsNullOrWhiteSpace(idEvento))
-                throw new Exception("ID inválido.");
-
             var update = Builders<Evento>.Update.Set(e => e.Activo, false);
             eventos.UpdateOne(e => e.Id == idEvento, update);
         }
 
+        public void HabilitarEvento(string idEvento)
+        {
+            var update = Builders<Evento>.Update.Set(e => e.Activo, true);
+            eventos.UpdateOne(e => e.Id == idEvento, update);
+        }
+
+        public bool InvitadoTieneConflicto(string invitadoId, DateTime fecha, DateTime hora, string eventoIdActual = null)
+        {
+            var builder = Builders<Evento>.Filter;
+
+            // Paso 1: Filtro que se puede traducir a MongoDB
+            var filtroBase = builder.And(
+                builder.Eq(e => e.Activo, true),
+                builder.Eq(e => e.Fecha, fecha.Date),
+                builder.AnyEq(e => e.InvitadosIds, invitadoId)
+            );
+
+            // Si estamos editando un evento existente, excluimos ese evento
+            if (!string.IsNullOrEmpty(eventoIdActual))
+            {
+                filtroBase = builder.And(filtroBase, builder.Ne(e => e.Id, eventoIdActual));
+            }
+
+            // Obtenemos los eventos que cumplen la fecha y contienen al invitado
+            var eventosCandidatos = eventos.Find(filtroBase).ToList();
+
+            // Paso 2: En memoria, verificamos la hora exacta (ignorando segundos)
+            foreach (var evento in eventosCandidatos)
+            {
+                if (evento.Hora.Hour == hora.Hour && evento.Hora.Minute == hora.Minute)
+                {
+                    return true; // Conflicto encontrado
+                }
+            }
+
+            return false; // Sin conflicto
+        }
     }
 }

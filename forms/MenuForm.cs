@@ -11,22 +11,31 @@ namespace eventPlus.Forms
         public MenuForm(Usuario usuario)
         {
             InitializeComponent();
-
             usuarioActual = usuario;
 
             lblUsuario.Text = usuario.Nombre;
+
+            ConfigurarVistaPorRol();
+        }
+
+        private void ConfigurarVistaPorRol()
+        {
+            if (usuarioActual.Rol == "Invitado")
+            {
+                // Oculta todos los botones que no queremos para invitados
+                btnGestionEventos.Visible = false;
+                btnRegistro.Visible = false;
+
+                // Asegura que los esenciales queden visibles
+                btnEventos.Visible = true;
+                btnCerrarSesion.Visible = true;
+            }
         }
 
         private void MenuForm_Load(object sender, EventArgs e)
         {
             lblUsuario.Text =
                 $"{usuarioActual.Nombre} - {usuarioActual.Rol}";
-
-            // SI ES INVITADO
-            if (usuarioActual.Rol == "Invitado")
-            {
-                btnGestionEventos.Visible = false;
-            }
         }
 
         // ==========================

@@ -105,7 +105,10 @@ namespace eventPlus.Services
 
         public List<Usuario> ObtenerPorIds(List<string> ids)
         {
-            return new List<Usuario>();
+            if (ids == null || ids.Count == 0)
+                return new List<Usuario>();
+
+            return usuarios.Find(u => ids.Contains(u.Id)).ToList();
         }
     }
 }
