@@ -308,5 +308,10 @@ namespace eventPlus.Forms
             DetalleEventoForm detalle = new DetalleEventoForm(seleccionado);
             detalle.ShowDialog();
         }
+
+        private void btnQuitarInvitado_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
