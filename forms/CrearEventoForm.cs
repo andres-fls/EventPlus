@@ -50,9 +50,7 @@ namespace eventPlus.Forms
         // =====================================
         // LOAD
         // =====================================
-        private void CrearEventoForm_Load(
-            object sender,
-            EventArgs e)
+        private void CrearEventoForm_Load(object sender,EventArgs e)
         {
             // =============================
             // TIPOS EVENTO
@@ -69,6 +67,8 @@ namespace eventPlus.Forms
                 DateTimePickerFormat.Time;
 
             dtpHora.ShowUpDown = true;
+
+            dtpFecha.MinDate = DateTime.Today;
 
             // =============================
             // MODO EDICION
