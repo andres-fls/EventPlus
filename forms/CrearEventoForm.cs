@@ -58,10 +58,9 @@ namespace eventPlus.Forms
             // TIPOS EVENTO
             // =============================
             cmbTipo.Items.Clear();
-
-            cmbTipo.Items.Add("Academico");
-            cmbTipo.Items.Add("Deportivo");
-            cmbTipo.Items.Add("Cultural");
+            cmbTipo.Items.Add("Público");
+            cmbTipo.Items.Add("Privado");
+            cmbTipo.SelectedIndex = 0; // opción por defecto
 
             // =============================
             // CONFIG DTP HORA
@@ -87,8 +86,9 @@ namespace eventPlus.Forms
                 dtpFecha.Value =
                     eventoEditar.Fecha;
 
-                dtpHora.Value =
-                    eventoEditar.Hora;
+                dtpHora.Value = DateTime.ParseExact(eventoEditar.Hora, "HH:mm", null);
+
+                numCupo.Value = eventoEditar.CupoMaximo;   // si usas NumericUpDown
             }
         }
 
@@ -129,6 +129,16 @@ namespace eventPlus.Forms
                     NombreEvento =
                         txtNombre.Text.Trim(),
 
+                    DescripcionEvento =
+                        txtDescripcion.Text.Trim(),
+
+                    LugarEvento =
+                        txtLugar.Text.Trim(),
+
+                    CategoriaEvento =
+                        cmbCategEvento.SelectedItem
+                        .ToString(),
+
                     TipoEvento =
                         cmbTipo.SelectedItem
                         .ToString(),
@@ -136,8 +146,9 @@ namespace eventPlus.Forms
                     Fecha =
                         dtpFecha.Value.Date,
 
-                    Hora =
-                        dtpHora.Value,
+                    Hora = dtpHora.Value.ToString("HH:mm"),
+
+                    CupoMaximo = (int)numCupo.Value,
 
                     IdLider =
                         usuarioActual.Id,
@@ -165,7 +176,7 @@ namespace eventPlus.Forms
                     evento.Id =
                         eventoEditar.Id;
 
-                    eventoService.ActualizarEvento(
+                    eventoService.EditarEvento(
                         evento);
 
                     MessageBox.Show(

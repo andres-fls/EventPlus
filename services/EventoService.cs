@@ -33,8 +33,10 @@ namespace eventPlus.Services
             if (evento.Fecha <= DateTime.Now)
                 throw new Exception("La fecha debe ser futura.");
 
-            if (evento.Hora <= DateTime.Now)
-                throw new Exception("La hora debe ser futura.");
+            // Validar que la fecha y hora combinadas sean futuras
+            DateTime fechaHoraEvento = evento.Fecha.Date + TimeSpan.Parse(evento.Hora);
+            if (fechaHoraEvento <= DateTime.Now)
+                throw new Exception("La fecha y hora del evento deben ser futuras.");
 
             // 🔴 VALIDAR CRUCE DEL LÍDER
             bool liderOcupado = eventos.Find(e =>
@@ -118,19 +120,6 @@ namespace eventPlus.Services
         }
 
         // =========================================
-        // DESACTIVAR EVENTO (SOFT DELETE)
-        // =========================================
-        public void DesactivarEvento(string idEvento)
-        {
-            if (string.IsNullOrWhiteSpace(idEvento))
-                throw new Exception("ID inválido.");
-
-            var update = Builders<Evento>.Update.Set(e => e.Activo, false);
-
-            eventos.UpdateOne(e => e.Id == idEvento, update);
-        }
-
-        // =========================================
         // EVENTOS POR USUARIO
         // =========================================
         public List<Evento> ObtenerEventosPorUsuario(string usuarioId)
@@ -162,25 +151,60 @@ namespace eventPlus.Services
             ).ToList();
         }
 
+        // Luego siguen ObtenerTodos, ObtenerEventosInvitado, etc.
+
         public List<Evento> ObtenerTodos()
         {
-            return new List<Evento>();
+            return ObtenerTodos(true);
         }
+        
+        public List<Evento> ObtenerTodos(bool soloActivos = true)
+        {
+            var filtro = soloActivos ? Builders<Evento>.Filter.Eq(e => e.Activo, true) : Builders<Evento>.Filter.Empty;
+            return eventos.Find(filtro).ToList();
+        }
+      
 
         public List<Evento> ObtenerEventosInvitado(string idUsuario)
         {
-            return new List<Evento>();
+            return eventos.Find(e =>
+                e.Activo &&
+                e.InvitadosIds != null &&
+                e.InvitadosIds.Contains(idUsuario)
+            ).ToList();
         }
 
-        public void ActualizarEvento(Evento evento)
+        public void DeshabilitarEvento(string idEvento)
         {
-
+            var update = Builders<Evento>.Update.Set(e => e.Activo, false);
+            eventos.UpdateOne(e => e.Id == idEvento, update);
         }
 
-        public void DeshabilitarEvento(string id)
+        public void HabilitarEvento(string idEvento)
         {
-
+            var update = Builders<Evento>.Update.Set(e => e.Activo, true);
+            eventos.UpdateOne(e => e.Id == idEvento, update);
         }
 
+        public bool InvitadoTieneConflicto(string invitadoId, DateTime fecha, string hora, string eventoIdActual = null)
+        {
+            var builder = Builders<Evento>.Filter;
+            var filtroBase = builder.And(
+                builder.Eq(e => e.Activo, true),
+                builder.Eq(e => e.Fecha, fecha.Date),
+                builder.AnyEq(e => e.InvitadosIds, invitadoId)
+            );
+            if (!string.IsNullOrEmpty(eventoIdActual))
+                filtroBase = builder.And(filtroBase, builder.Ne(e => e.Id, eventoIdActual));
+
+            var eventosCandidatos = eventos.Find(filtroBase).ToList();
+
+            foreach (var evento in eventosCandidatos)
+            {
+                if (evento.Hora == hora)   // comparación directa de strings
+                    return true;
+            }
+            return false;
+        }
     }
 }
