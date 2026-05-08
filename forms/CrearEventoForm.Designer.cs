@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CrearEventoForm));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.chkActivo = new System.Windows.Forms.CheckBox();
             this.lblEstado = new System.Windows.Forms.Label();
@@ -323,6 +324,7 @@
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.White;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CrearEventoForm";
