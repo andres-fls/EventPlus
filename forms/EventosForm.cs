@@ -48,6 +48,16 @@ namespace eventPlus.Forms
             dgvInvitados.BackgroundColor = Color.White;
             dgvInvitados.GridColor = Color.Gray;
 
+
+            if (usuarioActual.Rol == "Invitado")
+            {
+                cmbMes.Items.Clear();
+                cmbMes.Items.Add("Todos");
+                for (int i = 1; i <= 12; i++)
+                    cmbMes.Items.Add(i);
+                cmbMes.SelectedIndex = 0;
+            }
+
         }
 
         // =====================================
@@ -164,6 +174,15 @@ namespace eventPlus.Forms
                 btnCrear.Visible = false;
                 btnEditar.Visible = false;
                 btnDeshabilitar.Visible = false;
+
+                // Mostrar filtros para invitado
+                cmbMes.Visible = true;
+                btnFiltrar.Visible = true;
+            }
+            else
+            {
+                cmbMes.Visible = false;
+                btnFiltrar.Visible = false;
             }
         }
 
@@ -409,6 +428,28 @@ namespace eventPlus.Forms
 
             MessageBox.Show(mensaje, "Resultado", MessageBoxButtons.OK,
                 agregados > 0 ? MessageBoxIcon.Information : MessageBoxIcon.Warning);
+        }
+
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            if (usuarioActual.Rol != "Invitado") return;
+
+            string seleccion = cmbMes.SelectedItem.ToString();
+            List<Evento> eventos;
+
+            if (seleccion == "Todos")
+            {
+                eventos = eventoService.ObtenerEventosInvitado(usuarioActual.Id);
+            }
+            else
+            {
+                int mes = int.Parse(seleccion);
+                eventos = eventoService.ObtenerEventosPorMes(usuarioActual.Id, mes);
+            }
+
+            dgvEventos.DataSource = null;
+            dgvEventos.DataSource = eventos;
+            dgvEventos.ClearSelection();
         }
     }
 }
