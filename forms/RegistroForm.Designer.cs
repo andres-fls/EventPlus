@@ -285,6 +285,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "RegistroForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegistroForm";

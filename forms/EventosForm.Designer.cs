@@ -199,6 +199,8 @@
             this.Controls.Add(this.btnCrear);
             this.Controls.Add(this.lblTitulo);
             this.ForeColor = System.Drawing.Color.White;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "EventosForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EventosForm";

@@ -140,6 +140,8 @@ namespace eventPlus.Forms
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(341, 359);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginForm";

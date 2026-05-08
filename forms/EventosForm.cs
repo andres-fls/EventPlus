@@ -181,8 +181,8 @@ namespace eventPlus.Forms
             }
             else
             {
-                cmbMes.Visible = false;
-                btnFiltrar.Visible = false;
+                cmbMes.Visible = true;
+                btnFiltrar.Visible = true;
             }
         }
 
