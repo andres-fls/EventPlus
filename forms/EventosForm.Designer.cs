@@ -43,8 +43,9 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.ForeColor = System.Drawing.Color.White;
             this.btnVolver.Location = new System.Drawing.Point(677, 381);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(80, 51);
@@ -55,9 +56,10 @@
             // 
             // btnDeshabilitar
             // 
-            this.btnDeshabilitar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(176)))), ((int)(((byte)(176)))));
+            this.btnDeshabilitar.BackColor = System.Drawing.Color.Brown;
             this.btnDeshabilitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeshabilitar.Location = new System.Drawing.Point(342, 381);
+            this.btnDeshabilitar.ForeColor = System.Drawing.Color.White;
+            this.btnDeshabilitar.Location = new System.Drawing.Point(541, 381);
             this.btnDeshabilitar.Name = "btnDeshabilitar";
             this.btnDeshabilitar.Size = new System.Drawing.Size(103, 51);
             this.btnDeshabilitar.TabIndex = 17;
@@ -67,11 +69,12 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.ForeColor = System.Drawing.Color.White;
             this.btnEditar.Location = new System.Drawing.Point(127, 381);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(70, 51);
+            this.btnEditar.Size = new System.Drawing.Size(74, 51);
             this.btnEditar.TabIndex = 16;
             this.btnEditar.Text = "Editar evento";
             this.btnEditar.UseVisualStyleBackColor = false;
@@ -79,11 +82,12 @@
             // 
             // btnCrear
             // 
-            this.btnCrear.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCrear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnCrear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCrear.ForeColor = System.Drawing.Color.White;
             this.btnCrear.Location = new System.Drawing.Point(22, 381);
             this.btnCrear.Name = "btnCrear";
-            this.btnCrear.Size = new System.Drawing.Size(69, 51);
+            this.btnCrear.Size = new System.Drawing.Size(82, 51);
             this.btnCrear.TabIndex = 15;
             this.btnCrear.Text = "Crear evento";
             this.btnCrear.UseVisualStyleBackColor = false;
@@ -94,7 +98,7 @@
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.lblTitulo.ForeColor = System.Drawing.Color.Black;
+            this.lblTitulo.ForeColor = System.Drawing.Color.White;
             this.lblTitulo.Location = new System.Drawing.Point(262, 21);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(253, 31);
@@ -113,11 +117,12 @@
             // 
             // btnDetalle
             // 
-            this.btnDetalle.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnDetalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDetalle.ForeColor = System.Drawing.Color.White;
             this.btnDetalle.Location = new System.Drawing.Point(235, 381);
             this.btnDetalle.Name = "btnDetalle";
-            this.btnDetalle.Size = new System.Drawing.Size(70, 51);
+            this.btnDetalle.Size = new System.Drawing.Size(79, 51);
             this.btnDetalle.TabIndex = 21;
             this.btnDetalle.Text = "Detalle evento";
             this.btnDetalle.UseVisualStyleBackColor = false;
@@ -125,13 +130,15 @@
             // 
             // btnAgregarInvitado
             // 
+            this.btnAgregarInvitado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnAgregarInvitado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarInvitado.Location = new System.Drawing.Point(482, 381);
+            this.btnAgregarInvitado.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarInvitado.Location = new System.Drawing.Point(347, 381);
             this.btnAgregarInvitado.Name = "btnAgregarInvitado";
-            this.btnAgregarInvitado.Size = new System.Drawing.Size(74, 51);
+            this.btnAgregarInvitado.Size = new System.Drawing.Size(98, 51);
             this.btnAgregarInvitado.TabIndex = 22;
             this.btnAgregarInvitado.Text = "Agregar invitado";
-            this.btnAgregarInvitado.UseVisualStyleBackColor = true;
+            this.btnAgregarInvitado.UseVisualStyleBackColor = false;
             this.btnAgregarInvitado.Click += new System.EventHandler(this.btnAgregarInvitado_Click_1);
             // 
             // dgvEventos
@@ -146,7 +153,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightSlateGray;
+            this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(785, 450);
             this.Controls.Add(this.dgvEventos);
             this.Controls.Add(this.btnAgregarInvitado);
@@ -157,6 +164,7 @@
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnCrear);
             this.Controls.Add(this.lblTitulo);
+            this.ForeColor = System.Drawing.Color.White;
             this.Name = "EventosForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EventosForm";

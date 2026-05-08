@@ -170,7 +170,7 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(176)))), ((int)(((byte)(176)))));
+            this.btnCerrar.BackColor = System.Drawing.Color.Brown;
             this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrar.Location = new System.Drawing.Point(692, 390);
             this.btnCerrar.Name = "btnCerrar";
@@ -182,20 +182,21 @@
             // 
             // btnQuitarInvitado
             // 
+            this.btnQuitarInvitado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnQuitarInvitado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuitarInvitado.Location = new System.Drawing.Point(32, 390);
             this.btnQuitarInvitado.Name = "btnQuitarInvitado";
-            this.btnQuitarInvitado.Size = new System.Drawing.Size(73, 48);
+            this.btnQuitarInvitado.Size = new System.Drawing.Size(105, 48);
             this.btnQuitarInvitado.TabIndex = 14;
             this.btnQuitarInvitado.Text = "Quitar invitado";
-            this.btnQuitarInvitado.UseVisualStyleBackColor = true;
+            this.btnQuitarInvitado.UseVisualStyleBackColor = false;
             this.btnQuitarInvitado.Click += new System.EventHandler(this.btnQuitarInvitado_Click_1);
             // 
             // DetalleEventoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightSlateGray;
+            this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnQuitarInvitado);
             this.Controls.Add(this.btnCerrar);
@@ -212,6 +213,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.ForeColor = System.Drawing.Color.White;
             this.Name = "DetalleEventoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DetalleEventoForm";
