@@ -33,7 +33,8 @@ namespace eventPlus.Services
             if (evento.Fecha <= DateTime.Now)
                 throw new Exception("La fecha debe ser futura.");
 
-            if (evento.Hora <= DateTime.Now)
+            DateTime horaEvento = DateTime.ParseExact(evento.Hora, "HH:mm", null);
+            if (horaEvento <= DateTime.Now)
                 throw new Exception("La hora debe ser futura.");
 
             // 🔴 VALIDAR CRUCE DEL LÍDER
@@ -184,36 +185,25 @@ namespace eventPlus.Services
             eventos.UpdateOne(e => e.Id == idEvento, update);
         }
 
-        public bool InvitadoTieneConflicto(string invitadoId, DateTime fecha, DateTime hora, string eventoIdActual = null)
+        public bool InvitadoTieneConflicto(string invitadoId, DateTime fecha, string hora, string eventoIdActual = null)
         {
             var builder = Builders<Evento>.Filter;
-
-            // Paso 1: Filtro que se puede traducir a MongoDB
             var filtroBase = builder.And(
                 builder.Eq(e => e.Activo, true),
                 builder.Eq(e => e.Fecha, fecha.Date),
                 builder.AnyEq(e => e.InvitadosIds, invitadoId)
             );
-
-            // Si estamos editando un evento existente, excluimos ese evento
             if (!string.IsNullOrEmpty(eventoIdActual))
-            {
                 filtroBase = builder.And(filtroBase, builder.Ne(e => e.Id, eventoIdActual));
-            }
 
-            // Obtenemos los eventos que cumplen la fecha y contienen al invitado
             var eventosCandidatos = eventos.Find(filtroBase).ToList();
 
-            // Paso 2: En memoria, verificamos la hora exacta (ignorando segundos)
             foreach (var evento in eventosCandidatos)
             {
-                if (evento.Hora.Hour == hora.Hour && evento.Hora.Minute == hora.Minute)
-                {
-                    return true; // Conflicto encontrado
-                }
+                if (evento.Hora == hora)   // comparación directa de strings
+                    return true;
             }
-
-            return false; // Sin conflicto
+            return false;
         }
     }
 }

@@ -102,10 +102,10 @@ namespace eventPlus.Forms
         {
             lblNombreEvento.Text = eventoActual.NombreEvento;
             lblTipoEvento.Text = eventoActual.TipoEvento;        
-            lblLugar.Text = eventoActual.lugarEvento;
+            lblLugar.Text = eventoActual.LugarEvento;
             lblFecha.Text = eventoActual.Fecha.ToString("dd/MM/yyyy");
-            lblHora.Text = eventoActual.Hora.ToString("HH:mm");
-            lblTotalInvitados.Text = $"{eventoActual.InvitadosIds.Count}/{eventoActual.cupoMaximo}";
+            lblHora.Text = DateTime.ParseExact(eventoActual.Hora, "HH:mm", null).ToString("HH:mm");
+            lblTotalInvitados.Text = $"{eventoActual.InvitadosIds.Count}/{eventoActual.CupoMaximo}";
         }
 
         // =============================================

@@ -13,19 +13,19 @@ namespace eventPlus.Models
 
         public string NombreEvento { get; set; }
 
-        public string lugarEvento { get; set; }
+        public string LugarEvento { get; set; }
 
         public string TipoEvento { get; set; }
 
-        public string categoriaEvento { get; set; }
+        public string CategoriaEvento { get; set; }
 
-        public string descripcionEvento { get; set; }
+        public string DescripcionEvento { get; set; }
 
         public DateTime Fecha { get; set; }
 
-        public DateTime Hora { get; set; }
+        public string Hora { get; set; }
 
-        public int cupoMaximo { get; set; }
+        public int CupoMaximo { get; set; }
 
         public string IdLider { get; set; }
 

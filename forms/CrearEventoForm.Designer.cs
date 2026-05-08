@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.chkActivo = new System.Windows.Forms.CheckBox();
             this.lblEstado = new System.Windows.Forms.Label();
             this.dtpHora = new System.Windows.Forms.DateTimePicker();
@@ -51,6 +50,7 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCupo)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -75,16 +75,6 @@
             this.groupBox2.Size = new System.Drawing.Size(306, 322);
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(6, 31);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(231, 20);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "Seleccione fecha de inscripcion";
             // 
             // chkActivo
             // 
@@ -214,7 +204,10 @@
             this.cmbCategEvento.Items.AddRange(new object[] {
             "Deportivo",
             "Cultural",
-            "Academico"});
+            "Academico",
+            "Negocios",
+            "Tecnologico",
+            "Recreativo"});
             this.cmbCategEvento.Location = new System.Drawing.Point(10, 319);
             this.cmbCategEvento.Name = "cmbCategEvento";
             this.cmbCategEvento.Size = new System.Drawing.Size(150, 28);
@@ -319,6 +312,16 @@
             this.label1.Text = "CREAR EVENTO";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(6, 31);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(231, 20);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Seleccione fecha de inscripcion";
+            // 
             // CrearEventoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -347,7 +350,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox chkActivo;
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Label lblCupo;
@@ -369,5 +371,6 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

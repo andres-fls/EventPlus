@@ -10,6 +10,8 @@ namespace eventPlus.Data
 
         public MongoContext()
         {
+            System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
+
             string connectionString =
                 ConfigurationManager.AppSettings["MongoConnection"];
 

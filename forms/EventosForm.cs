@@ -333,9 +333,9 @@ namespace eventPlus.Forms
                 }
 
                 // Verificar cupo
-                if (eventoSeleccionado.InvitadosIds.Count >= eventoSeleccionado.cupoMaximo)
+                if (eventoSeleccionado.InvitadosIds.Count >= eventoSeleccionado.CupoMaximo)
                 {
-                    errores.Add($"Cupo máximo alcanzado ({eventoSeleccionado.cupoMaximo}). No se pudo agregar a {invitado.Nombre}.");
+                    errores.Add($"Cupo máximo alcanzado ({eventoSeleccionado.CupoMaximo}). No se pudo agregar a {invitado.Nombre}.");
                     break; // ya no hay campo para nadie más
                 }
 
