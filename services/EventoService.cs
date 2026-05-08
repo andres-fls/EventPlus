@@ -33,9 +33,10 @@ namespace eventPlus.Services
             if (evento.Fecha <= DateTime.Now)
                 throw new Exception("La fecha debe ser futura.");
 
-            DateTime horaEvento = DateTime.ParseExact(evento.Hora, "HH:mm", null);
-            if (horaEvento <= DateTime.Now)
-                throw new Exception("La hora debe ser futura.");
+            // Validar que la fecha y hora combinadas sean futuras
+            DateTime fechaHoraEvento = evento.Fecha.Date + TimeSpan.Parse(evento.Hora);
+            if (fechaHoraEvento <= DateTime.Now)
+                throw new Exception("La fecha y hora del evento deben ser futuras.");
 
             // 🔴 VALIDAR CRUCE DEL LÍDER
             bool liderOcupado = eventos.Find(e =>

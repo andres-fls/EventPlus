@@ -40,9 +40,9 @@
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblHora = new System.Windows.Forms.Label();
             this.lblTotalInvitados = new System.Windows.Forms.Label();
-            this.dgvInvitadosEvento = new System.Windows.Forms.DataGridView();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnQuitarInvitado = new System.Windows.Forms.Button();
+            this.dgvInvitadosEvento = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvitadosEvento)).BeginInit();
             this.SuspendLayout();
             // 
@@ -160,14 +160,6 @@
             this.lblTotalInvitados.Size = new System.Drawing.Size(0, 20);
             this.lblTotalInvitados.TabIndex = 11;
             // 
-            // dgvInvitadosEvento
-            // 
-            this.dgvInvitadosEvento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInvitadosEvento.Location = new System.Drawing.Point(32, 124);
-            this.dgvInvitadosEvento.Name = "dgvInvitadosEvento";
-            this.dgvInvitadosEvento.Size = new System.Drawing.Size(732, 250);
-            this.dgvInvitadosEvento.TabIndex = 12;
-            // 
             // btnCerrar
             // 
             this.btnCerrar.BackColor = System.Drawing.Color.Brown;
@@ -192,15 +184,23 @@
             this.btnQuitarInvitado.UseVisualStyleBackColor = false;
             this.btnQuitarInvitado.Click += new System.EventHandler(this.btnQuitarInvitado_Click_1);
             // 
+            // dgvInvitadosEvento
+            // 
+            this.dgvInvitadosEvento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInvitadosEvento.Location = new System.Drawing.Point(32, 114);
+            this.dgvInvitadosEvento.Name = "dgvInvitadosEvento";
+            this.dgvInvitadosEvento.Size = new System.Drawing.Size(732, 270);
+            this.dgvInvitadosEvento.TabIndex = 15;
+            // 
             // DetalleEventoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dgvInvitadosEvento);
             this.Controls.Add(this.btnQuitarInvitado);
             this.Controls.Add(this.btnCerrar);
-            this.Controls.Add(this.dgvInvitadosEvento);
             this.Controls.Add(this.lblTotalInvitados);
             this.Controls.Add(this.lblHora);
             this.Controls.Add(this.lblFecha);
@@ -237,8 +237,8 @@
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Label lblTotalInvitados;
-        private System.Windows.Forms.DataGridView dgvInvitadosEvento;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnQuitarInvitado;
+        private System.Windows.Forms.DataGridView dgvInvitadosEvento;
     }
 }

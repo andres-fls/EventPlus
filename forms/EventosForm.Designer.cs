@@ -33,12 +33,12 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnCrear = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.dgvInvitados = new System.Windows.Forms.DataGridView();
             this.btnDetalle = new System.Windows.Forms.Button();
             this.btnAgregarInvitado = new System.Windows.Forms.Button();
             this.dgvEventos = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInvitados)).BeginInit();
+            this.dgvInvitados = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEventos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInvitados)).BeginInit();
             this.SuspendLayout();
             // 
             // btnVolver
@@ -105,16 +105,6 @@
             this.lblTitulo.TabIndex = 13;
             this.lblTitulo.Text = "          Eventos          ";
             // 
-            // dgvInvitados
-            // 
-            this.dgvInvitados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInvitados.GridColor = System.Drawing.SystemColors.Control;
-            this.dgvInvitados.Location = new System.Drawing.Point(451, 72);
-            this.dgvInvitados.Name = "dgvInvitados";
-            this.dgvInvitados.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.dgvInvitados.Size = new System.Drawing.Size(322, 281);
-            this.dgvInvitados.TabIndex = 19;
-            // 
             // btnDetalle
             // 
             this.btnDetalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -149,16 +139,24 @@
             this.dgvEventos.Size = new System.Drawing.Size(433, 281);
             this.dgvEventos.TabIndex = 23;
             // 
+            // dgvInvitados
+            // 
+            this.dgvInvitados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInvitados.Location = new System.Drawing.Point(451, 72);
+            this.dgvInvitados.Name = "dgvInvitados";
+            this.dgvInvitados.Size = new System.Drawing.Size(322, 281);
+            this.dgvInvitados.TabIndex = 24;
+            // 
             // EventosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(785, 450);
+            this.Controls.Add(this.dgvInvitados);
             this.Controls.Add(this.dgvEventos);
             this.Controls.Add(this.btnAgregarInvitado);
             this.Controls.Add(this.btnDetalle);
-            this.Controls.Add(this.dgvInvitados);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnDeshabilitar);
             this.Controls.Add(this.btnEditar);
@@ -169,8 +167,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EventosForm";
             this.Load += new System.EventHandler(this.EventosForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInvitados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEventos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInvitados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,9 +181,9 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnCrear;
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.DataGridView dgvInvitados;
         private System.Windows.Forms.Button btnDetalle;
         private System.Windows.Forms.Button btnAgregarInvitado;
         private System.Windows.Forms.DataGridView dgvEventos;
+        private System.Windows.Forms.DataGridView dgvInvitados;
     }
 }

@@ -2,6 +2,7 @@
 using eventPlus.Services;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace eventPlus.Forms
@@ -23,7 +24,15 @@ namespace eventPlus.Forms
             ConfigurarDataGridView();
             CargarDatosEvento();
             CargarInvitados();
-            ConfigurarVistaPorRol(); 
+            ConfigurarVistaPorRol();
+
+            dgvInvitadosEvento.DefaultCellStyle.ForeColor = Color.Black;
+            dgvInvitadosEvento.DefaultCellStyle.BackColor = Color.White;
+            dgvInvitadosEvento.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+            dgvInvitadosEvento.ColumnHeadersDefaultCellStyle.BackColor = Color.LightGray;
+            dgvInvitadosEvento.BackgroundColor = Color.White;
+            dgvInvitadosEvento.GridColor = Color.Gray;
+
         }
 
         private void ConfigurarVistaPorRol()
