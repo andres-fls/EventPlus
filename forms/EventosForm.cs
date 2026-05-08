@@ -333,6 +333,15 @@ namespace eventPlus.Forms
                 return;
             }
 
+            if (!eventoSeleccionado.Activo)
+            {
+                MessageBox.Show("No se pueden agregar invitados a un evento deshabilitado.",
+                                "Evento inactivo",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+                return;
+            }
+
             if (dgvInvitados.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Selecciona al menos un invitado.");

@@ -115,6 +115,7 @@ namespace eventPlus.Forms
             lblFecha.Text = eventoActual.Fecha.ToString("dd/MM/yyyy");
             lblHora.Text = DateTime.ParseExact(eventoActual.Hora, "HH:mm", null).ToString("HH:mm");
             lblTotalInvitados.Text = $"{eventoActual.InvitadosIds.Count}/{eventoActual.CupoMaximo}";
+            lblCategoriaEvento.Text = eventoActual.CategoriaEvento;
         }
 
         // =============================================
@@ -156,5 +157,7 @@ namespace eventPlus.Forms
             MessageBox.Show($"Invitado {invitadoSeleccionado.Nombre} eliminado del evento.");
             CargarInvitados();
         }
+
+        
     }
 }

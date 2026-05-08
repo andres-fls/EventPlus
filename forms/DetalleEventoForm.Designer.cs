@@ -43,6 +43,8 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnQuitarInvitado = new System.Windows.Forms.Button();
             this.dgvInvitadosEvento = new System.Windows.Forms.DataGridView();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblCategoriaEvento = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvitadosEvento)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,7 +72,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(493, 24);
+            this.label3.Location = new System.Drawing.Point(452, 24);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 20);
             this.label3.TabIndex = 2;
@@ -80,7 +82,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(493, 57);
+            this.label4.Location = new System.Drawing.Point(620, 24);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 20);
             this.label4.TabIndex = 3;
@@ -100,7 +102,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(493, 91);
+            this.label6.Location = new System.Drawing.Point(452, 91);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(118, 20);
             this.label6.TabIndex = 5;
@@ -137,7 +139,7 @@
             // 
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.Location = new System.Drawing.Point(570, 24);
+            this.lblFecha.Location = new System.Drawing.Point(529, 24);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(0, 20);
             this.lblFecha.TabIndex = 9;
@@ -146,7 +148,7 @@
             // 
             this.lblHora.AutoSize = true;
             this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHora.Location = new System.Drawing.Point(570, 57);
+            this.lblHora.Location = new System.Drawing.Point(697, 24);
             this.lblHora.Name = "lblHora";
             this.lblHora.Size = new System.Drawing.Size(0, 20);
             this.lblHora.TabIndex = 10;
@@ -155,7 +157,7 @@
             // 
             this.lblTotalInvitados.AutoSize = true;
             this.lblTotalInvitados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalInvitados.Location = new System.Drawing.Point(633, 91);
+            this.lblTotalInvitados.Location = new System.Drawing.Point(586, 91);
             this.lblTotalInvitados.Name = "lblTotalInvitados";
             this.lblTotalInvitados.Size = new System.Drawing.Size(0, 20);
             this.lblTotalInvitados.TabIndex = 11;
@@ -192,12 +194,33 @@
             this.dgvInvitadosEvento.Size = new System.Drawing.Size(732, 270);
             this.dgvInvitadosEvento.TabIndex = 15;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(452, 57);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(86, 20);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Categoria :";
+            // 
+            // lblCategoriaEvento
+            // 
+            this.lblCategoriaEvento.AutoSize = true;
+            this.lblCategoriaEvento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoriaEvento.Location = new System.Drawing.Point(587, 57);
+            this.lblCategoriaEvento.Name = "lblCategoriaEvento";
+            this.lblCategoriaEvento.Size = new System.Drawing.Size(0, 20);
+            this.lblCategoriaEvento.TabIndex = 17;
+            // 
             // DetalleEventoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblCategoriaEvento);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.dgvInvitadosEvento);
             this.Controls.Add(this.btnQuitarInvitado);
             this.Controls.Add(this.btnCerrar);
@@ -240,5 +263,7 @@
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnQuitarInvitado;
         private System.Windows.Forms.DataGridView dgvInvitadosEvento;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblCategoriaEvento;
     }
 }
