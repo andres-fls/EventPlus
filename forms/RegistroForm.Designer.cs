@@ -144,6 +144,7 @@
             // 
             // cmbGenero
             // 
+            this.cmbGenero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGenero.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGenero.FormattingEnabled = true;
             this.cmbGenero.Items.AddRange(new object[] {
@@ -161,6 +162,8 @@
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.Size = new System.Drawing.Size(59, 26);
             this.txtEdad.TabIndex = 35;
+            this.txtEdad.TextChanged += new System.EventHandler(this.txtEdad_TextChanged);
+            this.txtEdad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEdad_KeyPress);
             // 
             // txtTelefono
             // 
@@ -169,6 +172,8 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(121, 26);
             this.txtTelefono.TabIndex = 35;
+            this.txtTelefono.TextChanged += new System.EventHandler(this.txtTelefono_TextChanged);
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // txtCorreo
             // 
@@ -185,6 +190,8 @@
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(186, 26);
             this.txtCedula.TabIndex = 35;
+            this.txtCedula.TextChanged += new System.EventHandler(this.txtCedula_TextChanged);
+            this.txtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCedula_KeyPress);
             // 
             // label2
             // 
@@ -253,6 +260,8 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(333, 26);
             this.txtNombre.TabIndex = 21;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // label1
             // 
