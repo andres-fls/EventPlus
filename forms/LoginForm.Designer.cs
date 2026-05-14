@@ -2,7 +2,7 @@
 
 namespace eventPlus.Forms
 {
-    partial class LoginForm
+    partial class LoginForm  
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -30,6 +30,7 @@ namespace eventPlus.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblCorreo = new System.Windows.Forms.Label();
             this.txtCorreo = new System.Windows.Forms.TextBox();
@@ -140,9 +141,12 @@ namespace eventPlus.Forms
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(341, 359);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "LoginForm";
+            this.Text = "Event+";
             this.Load += new System.EventHandler(this.LoginForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

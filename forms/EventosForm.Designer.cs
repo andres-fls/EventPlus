@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EventosForm));
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnDeshabilitar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -199,9 +200,12 @@
             this.Controls.Add(this.btnCrear);
             this.Controls.Add(this.lblTitulo);
             this.ForeColor = System.Drawing.Color.White;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "EventosForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "EventosForm";
+            this.Text = "Event+";
             this.Load += new System.EventHandler(this.EventosForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEventos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvitados)).EndInit();

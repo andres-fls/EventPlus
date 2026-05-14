@@ -52,5 +52,102 @@ namespace eventPlus.Forms
         {
             
         }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!(char.IsLetter(e.KeyChar)) && e.KeyChar != (char)Keys.Back && e.KeyChar != ' ')
+            {
+                MessageBox.Show("Solo se permiten letras","Advertencia");
+                e.Handled = true;
+            }
+        }
+
+        private void txtCedula_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCedula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsDigit(e.KeyChar)) &&
+    e.KeyChar != (char)Keys.Back)
+            {
+                MessageBox.Show(
+                    "Solo se permiten números",
+                    "Advertencia");
+
+                e.Handled = true;
+            }
+
+            if (txtCedula.Text.Length >= 10 &&
+                e.KeyChar != (char)Keys.Back)
+            {
+                MessageBox.Show(
+                    "El número de identificación solo puede tener maximo 10 números",
+                    "Advertencia");
+
+                e.Handled = true;
+            }
+        }
+
+        private void txtTelefono_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsDigit(e.KeyChar)) &&e.KeyChar != (char)Keys.Back)
+            {
+                MessageBox.Show(
+                    "Solo se permiten números",
+                    "Advertencia");
+
+                e.Handled = true;
+            }
+
+            if (txtTelefono.Text.Length >= 10 &&
+                e.KeyChar != (char)Keys.Back)
+            {
+                MessageBox.Show(
+                    "El número de Telefono solo puede tener maximo 10 números",
+                    "Advertencia");
+
+                e.Handled = true;
+            }
+
+        }
+
+        private void txtEdad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsDigit(e.KeyChar)) && e.KeyChar != (char)Keys.Back)
+            {
+                MessageBox.Show(
+                    "Solo se permiten números",
+                    "Advertencia");
+
+                e.Handled = true;
+            }
+            if (txtEdad.Text.Length >=2 &&
+              e.KeyChar != (char)Keys.Back)
+            {
+                MessageBox.Show(
+                    " La edad solo puede tener máximo 2 dígitos",
+                    "Advertencia");
+
+                e.Handled = true;
+            }
+
+        }
+
+        private void txtEdad_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

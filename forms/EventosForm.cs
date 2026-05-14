@@ -51,13 +51,12 @@ namespace eventPlus.Forms
 
             if (usuarioActual.Rol == "Invitado")
             {
-                cmbMes.Items.Clear();
-                cmbMes.Items.Add("Todos");
-                for (int i = 1; i <= 12; i++)
-                    cmbMes.Items.Add(i);
-                cmbMes.SelectedIndex = 0;
             }
-
+            cmbMes.Items.Clear();
+            cmbMes.Items.Add("Todos");
+            for (int i = 1; i <= 12; i++)
+                cmbMes.Items.Add(i);
+            cmbMes.SelectedIndex = 0;
         }
 
         // =====================================
@@ -181,8 +180,8 @@ namespace eventPlus.Forms
             }
             else
             {
-                cmbMes.Visible = false;
-                btnFiltrar.Visible = false;
+                cmbMes.Visible = true;
+                btnFiltrar.Visible = true;
             }
         }
 
@@ -432,19 +431,31 @@ namespace eventPlus.Forms
 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
-            if (usuarioActual.Rol != "Invitado") return;
-
             string seleccion = cmbMes.SelectedItem.ToString();
             List<Evento> eventos;
 
             if (seleccion == "Todos")
             {
-                eventos = eventoService.ObtenerEventosInvitado(usuarioActual.Id);
+                // Sin filtro
+                eventos = usuarioActual.Rol == "Lider"
+                    ? eventoService.ObtenerTodos(false)
+                    : eventoService.ObtenerEventosInvitado(usuarioActual.Id);
             }
             else
             {
                 int mes = int.Parse(seleccion);
-                eventos = eventoService.ObtenerEventosPorMes(usuarioActual.Id, mes);
+
+                if (usuarioActual.Rol == "Lider")
+                {
+                    // Filtrar todos los eventos del mes (activos e inactivos)
+                    eventos = eventoService.ObtenerTodos(false)
+                        .Where(ev => ev.Fecha.Month == mes)
+                        .ToList();
+                }
+                else
+                {
+                    eventos = eventoService.ObtenerEventosPorMes(usuarioActual.Id, mes);
+                }
             }
 
             dgvEventos.DataSource = null;
