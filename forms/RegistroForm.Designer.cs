@@ -291,7 +291,7 @@
             this.MinimizeBox = false;
             this.Name = "RegistroForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "RegistroForm";
+            this.Text = "Event+";
             this.Load += new System.EventHandler(this.RegistroForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

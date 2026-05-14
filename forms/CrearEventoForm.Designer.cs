@@ -329,7 +329,7 @@
             this.MinimizeBox = false;
             this.Name = "CrearEventoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CrearEventoForm";
+            this.Text = "Event+";
             this.Load += new System.EventHandler(this.CrearEventoForm_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

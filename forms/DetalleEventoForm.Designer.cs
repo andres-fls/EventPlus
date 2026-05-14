@@ -243,7 +243,7 @@
             this.MinimizeBox = false;
             this.Name = "DetalleEventoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DetalleEventoForm";
+            this.Text = "Event+";
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvitadosEvento)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

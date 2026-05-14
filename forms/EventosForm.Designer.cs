@@ -205,7 +205,7 @@
             this.MinimizeBox = false;
             this.Name = "EventosForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "EventosForm";
+            this.Text = "Event+";
             this.Load += new System.EventHandler(this.EventosForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEventos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvitados)).EndInit();

@@ -2,7 +2,7 @@
 
 namespace eventPlus.Forms
 {
-    partial class LoginForm
+    partial class LoginForm  
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -146,7 +146,7 @@ namespace eventPlus.Forms
             this.MinimizeBox = false;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "LoginForm";
+            this.Text = "Event+";
             this.Load += new System.EventHandler(this.LoginForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
